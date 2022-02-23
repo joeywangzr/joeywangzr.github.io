@@ -430,6 +430,7 @@ const linkedinTexture = new THREE.TextureLoader().load('images/linkedin.png');
 const devpostTexture = new THREE.TextureLoader().load('images/devpost.jpg');
 const profileTexture = new THREE.TextureLoader().load('images/profile.jpg');
 const projectsTexture = new THREE.TextureLoader().load('images/projects.webp');
+const faceTexture = new THREE.TextureLoader().load('images/pfp.jpg');
 
 // Create Octahedron
 var geometry = new THREE.OctahedronGeometry( 10 , 0 );
@@ -440,8 +441,8 @@ const octa = new THREE.Mesh( geometry, material );
 material.transparent = true;
 material.opacity = 0.6;
 
-var icoGeometry = new THREE.IcosahedronGeometry( 4, 0 );
-const icoMaterial = new THREE.MeshStandardMaterial( { color: 0xFFFFFF } );
+var icoGeometry = new THREE.SphereGeometry( 4 );
+const icoMaterial = new THREE.MeshBasicMaterial( { map: faceTexture } );
 const ico = new THREE.Mesh( icoGeometry, icoMaterial );
 
 // Add light
