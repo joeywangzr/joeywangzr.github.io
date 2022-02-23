@@ -8,11 +8,7 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from './OrbitControls.js'
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`App is running on port ${ PORT }`);
-});
-
+port = process.env.PORT || 3000;
 
 // THREEX.DOMEVENTS.JS
 
