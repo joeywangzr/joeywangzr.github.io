@@ -9,10 +9,7 @@ import * as THREE from 'three'
 import { OrbitControls } from './OrbitControls.js'
 
 // Heroku
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
+const port = process.env.PORT || 5000;
 
 // THREEX.DOMEVENTS.JS
 
