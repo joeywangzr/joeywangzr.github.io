@@ -1,1 +1,1 @@
-web: npm run dev
+web: NPM_CONFIG_PRODUCTION=false npm run dev
