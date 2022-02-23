@@ -8,9 +8,6 @@ import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from './OrbitControls.js'
 
-// Heroku
-const port = process.env.PORT || 5000;
-
 // THREEX.DOMEVENTS.JS
 
 /** @namespace */
