@@ -2,6 +2,8 @@
 TO DO: 
 add reset button
 controls (zoom pan rotate)
+change speed
+light/dark mode toggle
 */
 
 // import './style.css'
