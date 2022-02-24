@@ -426,7 +426,7 @@ camera.position.setZ(25);
 const controls = new OrbitControls(camera,renderer.domElement)
 
 // Textures
-const githubTexture = new THREE.TextureLoader().load('images/github.png');
+const githubTexture = new THREE.TextureLoader().load('images/github_logo.png');
 const youtubeTexture = new THREE.TextureLoader().load('images/youtube.png');
 const linkedinTexture = new THREE.TextureLoader().load('images/linkedin.png');
 const devpostTexture = new THREE.TextureLoader().load('images/devpost.jpg');
