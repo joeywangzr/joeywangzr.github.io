@@ -4,11 +4,9 @@ add reset button
 controls (zoom pan rotate)
 */
 
-import './style.css'
+// import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from './OrbitControls.js'
-
-port = process.env.PORT || 3000;
+import { OrbitControls } from './jsm/controls/OrbitControls.js'
 
 // THREEX.DOMEVENTS.JS
 
@@ -513,10 +511,10 @@ scene.add( group, octa, ico );
 
 // Check resize
 function onWindowResize(){
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 
-  renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
 // Hover
@@ -533,65 +531,65 @@ function onMouseMove( event ) {
 function reset() {
   for (let i = 0; i < group.children.length; i++) {
     if (group.children[i].material) {
-      mouseOver = false;
-      group.children[i].material.opacity = 1.0;
-      document.getElementById("social").innerHTML = '';
+        mouseOver = false;
+        group.children[i].material.opacity = 1.0;
+        document.getElementById("social").innerHTML = '';
     }
   }
 }
 
 function hover() {
-  raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(group.children);
-  for (let i = 0; i < intersects.length; i++) {
-    mouseOver = true;
-    intersects[i].object.material.transparent = true;
-    intersects[i].object.material.opacity = 0.6;
-    document.getElementById("social").innerHTML = intersects[i].object.material.name;
-  }
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(group.children);
+    for (let i = 0; i < intersects.length; i++) {
+        mouseOver = true;
+        intersects[i].object.material.transparent = true;
+        intersects[i].object.material.opacity = 0.6;
+        document.getElementById("social").innerHTML = intersects[i].object.material.name;
+    }
 }
 
 function animate() {
-  requestAnimationFrame( animate );
-  reset();
-  hover();
-  if (!mouseOver) {
-    group.rotation.x += 0.001;
-    group.rotation.y += 0.001;
-    group.rotation.z += 0.001;
-    octa.rotation.x += 0.001;
-    octa.rotation.y += 0.001;
-    octa.rotation.z += 0.001;
-  }
-  
-  ico.rotation.x -= 0.01;
-  ico.rotation.y -= 0.01;
-  ico.rotation.z -= 0.01;
+    requestAnimationFrame( animate );
+    reset();
+    hover();
+    if (!mouseOver) {
+        group.rotation.x += 0.001;
+        group.rotation.y += 0.001;
+        group.rotation.z += 0.001;
+        octa.rotation.x += 0.001;
+        octa.rotation.y += 0.001;
+        octa.rotation.z += 0.001;
+    }
+    
+    ico.rotation.x -= 0.01;
+    ico.rotation.y -= 0.01;
+    ico.rotation.z -= 0.01;
 
 
-  controls.update();
-  renderer.render( scene, camera );
+    controls.update();
+    renderer.render( scene, camera );
 }
 
 // Links
 const domEvents = new THREEx.DomEvents(camera, renderer.domElement)
 domEvents.addEventListener(cubeA, 'click', event => {
-  window.open('https://github.com/joeywangzr');
+    window.open('https://github.com/joeywangzr');
 })
 domEvents.addEventListener(cubeB, 'click', event => {
-  window.open('https://www.linkedin.com/in/joeywangzr/');
+    window.open('https://www.linkedin.com/in/joeywangzr/');
 })
 domEvents.addEventListener(cubeC, 'click', event => {
-  window.open('https://www.youtube.com/channel/UCmzdG-IAfxvSOTScwSE6D9w');
+    window.open('https://www.youtube.com/channel/UCmzdG-IAfxvSOTScwSE6D9w');
 })
 domEvents.addEventListener(cubeD, 'click', event => {
-  window.open('https://devpost.com/joeywangzr');
+    window.open('https://devpost.com/joeywangzr');
 })
 domEvents.addEventListener(cubeE, 'click', event => {
-  window.open('./comingsoon.html');
+    window.open('./comingsoon.html');
 })
 domEvents.addEventListener(cubeF, 'click', event => {
-  window.open('./comingsoon.html');
+    window.open('./comingsoon.html');
 })
 
 // Text beside cursor
@@ -609,7 +607,7 @@ function moveCursor(e){
 setTimeout(remove, 5000)
 
 function remove() {
-  document.getElementById("fade").innerHTML = '';
+    document.getElementById("fade").innerHTML = '';
 }
 
 window.addEventListener( 'resize', onWindowResize, false );
