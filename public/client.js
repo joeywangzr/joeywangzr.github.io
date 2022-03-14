@@ -4,6 +4,8 @@ add reset button
 controls (zoom pan rotate)
 change speed
 light/dark mode toggle
+make text scale on screen size
+if drag then not move
 */
 
 // import './style.css'
@@ -398,7 +400,7 @@ THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 }
 
 // MY CODE STARTS HERE
-
+var mouseLeave = true;
 var mouseOver = false;
 // Check mouse
 var mouseDown = false;
@@ -423,7 +425,7 @@ renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(25);
 
-const controls = new OrbitControls(camera,renderer.domElement)
+const controls = new OrbitControls(camera, renderer.domElement);
 
 // Textures
 const githubTexture = new THREE.TextureLoader().load('images/github_logo.png');
@@ -454,10 +456,6 @@ const pointLight2 = new THREE.PointLight(0xffffff);
 pointLight2.position.set(-30,-30,-30);
 scene.add(pointLight, pointLight2);
 
-// const lightHelper = new THREE.PointLightHelper(pointLight);
-// const lightHelper2 = new THREE.PointLightHelper(pointLight2);
-// scene.add(lightHelper, lightHelper2);
-
 // Create Cubes
 var cubeGeometry = new THREE.BoxGeometry( 1.2, 1.2, 1.2 );
 const cubeMaterialA = new THREE.MeshBasicMaterial( { map: githubTexture, name: 'github' } );
@@ -480,29 +478,6 @@ cubeC.position.set( 0, 0, 10 );
 cubeD.position.set( 0, 0, -10 );
 cubeE.position.set( 0, -10, 0 );
 cubeF.position.set( -10, 0, 0 );
-
-// Create Spheres
-// var sphereGeometry = new THREE.SphereGeometry( 0.5 );
-// const sphereMaterialA = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
-// const sphereMaterialB = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
-// const sphereMaterialC = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
-// const sphereMaterialD = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
-// const sphereMaterialE = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
-// const sphereMaterialF = new THREE.MeshBasicMaterial( { color: 0xFFFFFF } );
-
-// const sphereA = new THREE.Mesh( sphereGeometry, sphereMaterialA );
-// const sphereB = new THREE.Mesh( sphereGeometry, sphereMaterialB );
-// const sphereC = new THREE.Mesh( sphereGeometry, sphereMaterialC );
-// const sphereD = new THREE.Mesh( sphereGeometry, sphereMaterialD );
-// const sphereE = new THREE.Mesh( sphereGeometry, sphereMaterialE );
-// const sphereF = new THREE.Mesh( sphereGeometry, sphereMaterialF );
-
-// sphereA.position.set( 10, 0, 0 );
-// sphereB.position.set( 0, 10, 0 );
-// sphereC.position.set( 0, 0, 10 );
-// sphereD.position.set( 0, 0, -10 );
-// sphereE.position.set( 0, -10, 0 );
-// sphereF.position.set( -10, 0, 0 );
 
 // Group together, add to scene
 const group = new THREE.Group();
@@ -531,16 +506,27 @@ function onMouseMove( event ) {
 }
 
 function reset() {
-  for (let i = 0; i < group.children.length; i++) {
-    if (group.children[i].material) {
-        mouseOver = false;
-        group.children[i].material.opacity = 1.0;
-        document.getElementById("social").innerHTML = '';
-    }
-  }
+	for (let i = 0; i < group.children.length; i++) {
+		if (group.children[i].material) {
+			mouseOver = false;
+			group.children[i].material.opacity = 1.0;
+			document.getElementById("social").innerHTML = '';
+		}
+	}
 }
 
 function hover() {
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(group.children);
+    for (let i = 0; i < intersects.length; i++) {
+        mouseOver = true;
+        intersects[i].object.material.transparent = true;
+        intersects[i].object.material.opacity = 0.6;
+        document.getElementById("social").innerHTML = intersects[i].object.material.name;
+    }
+}
+
+function hoverOverShape() {
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(group.children);
     for (let i = 0; i < intersects.length; i++) {
@@ -555,7 +541,7 @@ function animate() {
     requestAnimationFrame( animate );
     reset();
     hover();
-    if (!mouseOver) {
+    if (!mouseOver || mouseLeave) {
         group.rotation.x += 0.001;
         group.rotation.y += 0.001;
         group.rotation.z += 0.001;
@@ -563,11 +549,10 @@ function animate() {
         octa.rotation.y += 0.001;
         octa.rotation.z += 0.001;
     }
-    
+	// console.log(mouseLeave)
     ico.rotation.x -= 0.01;
     ico.rotation.y -= 0.01;
     ico.rotation.z -= 0.01;
-
 
     controls.update();
     renderer.render( scene, camera );
@@ -612,6 +597,21 @@ function remove() {
     document.getElementById("fade").innerHTML = '';
 }
 
+setTimeout(updateTime, 1000)
+
+function updateTime() {
+	mouseLeave = false;
+}
+
 window.addEventListener( 'resize', onWindowResize, false );
 window.addEventListener( 'mousemove', onMouseMove, false );
+document.documentElement.addEventListener('mouseleave', function() {
+	// console.log('out'); 
+	mouseLeave = true;
+})
+document.documentElement.addEventListener('mouseenter', function() {
+	// console.log('in'); 
+	mouseLeave = false;
+})
+
 animate()
