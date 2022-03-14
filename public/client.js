@@ -400,6 +400,7 @@ THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 }
 
 // MY CODE STARTS HERE
+var displayText = false;
 var mouseLeave = true;
 var mouseOver = false;
 // Check mouse
@@ -522,18 +523,12 @@ function hover() {
         mouseOver = true;
         intersects[i].object.material.transparent = true;
         intersects[i].object.material.opacity = 0.6;
-        document.getElementById("social").innerHTML = intersects[i].object.material.name;
-    }
-}
-
-function hoverOverShape() {
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(group.children);
-    for (let i = 0; i < intersects.length; i++) {
-        mouseOver = true;
-        intersects[i].object.material.transparent = true;
-        intersects[i].object.material.opacity = 0.6;
-        document.getElementById("social").innerHTML = intersects[i].object.material.name;
+		if (displayText == true) {
+        	document.getElementById("social").innerHTML = intersects[i].object.material.name;
+		}
+		else {
+			document.getElementById("social").innerHTML = '';
+		}
     }
 }
 
@@ -597,9 +592,10 @@ function remove() {
     document.getElementById("fade").innerHTML = '';
 }
 
-setTimeout(updateTime, 1000)
+setTimeout(updateTime, 900)
 
 function updateTime() {
+	displayText = true;
 	mouseLeave = false;
 }
 
