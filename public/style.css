@@ -16,7 +16,7 @@ body {
     animation-iteration-count: 1;
     animation-name: name-slide;
     animation-delay: 10s;
-    animation-duration: 2s; 
+    animation-duration: 2.5s; 
     animation-fill-mode: forwards;
 }
 
@@ -34,7 +34,7 @@ body {
     margin-top: 10%;
     animation-iteration-count: 1;
     animation-name: div-slide;
-    animation-delay: 10s;
+    animation-delay: 10.5s;
     animation-duration: 2s; 
     animation-fill-mode: forwards;
     /* background-color: black; */
@@ -59,7 +59,7 @@ canvas {
     left: 0;
     animation-iteration-count: 1;
     animation-name: fade-in;
-    animation-delay: 10s;
+    animation-delay: 11s;
     animation-duration: 4s; 
     animation-fill-mode: forwards;
 }
@@ -102,21 +102,21 @@ h1 {
 
 #comp-eng {
     animation-name: slide-down;
-    animation-delay: 12.5s;
+    animation-delay: 13s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 #hover-info {
     animation-name: slide-down;
-    animation-delay: 13s;
+    animation-delay: 14s;
     animation-duration: 1s;
     animation-fill-mode: forwards; 
 }
 
 #controls {
     animation-name: slide-down;
-    animation-delay: 13s;
+    animation-delay: 14s;
     animation-duration: 1s;
     animation-fill-mode: forwards; 
 }
