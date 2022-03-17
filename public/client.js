@@ -616,7 +616,7 @@ async function animateText () {
 	await sleep(1000)
 	node.innerText = ""
 	await node.type('Hello, World!')
-	await sleep(2500)
+	await sleep(2000)
 	await node.delete('Hello, World!')
 	await sleep(1000)
 	await node.type('I\'m Joey Wang.')
