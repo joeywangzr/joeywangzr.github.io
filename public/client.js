@@ -10,7 +10,7 @@ if drag then not move
 
 // import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from './jsm/controls/OrbitControls.js'
+// import { OrbitControls } from './jsm/controls/OrbitControls.js'
 
 // THREEX.DOMEVENTS.JS
 
@@ -427,7 +427,7 @@ renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(25);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+// const controls = new OrbitControls(camera, renderer.domElement);
 
 // Textures
 const githubTexture = new THREE.TextureLoader().load('images/github_logo.png');
