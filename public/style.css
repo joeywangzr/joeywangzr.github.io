@@ -103,21 +103,21 @@ h1 {
 #comp-eng {
     animation-name: slide-down;
     animation-delay: 13s;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
 
 #hover-info {
     animation-name: slide-down;
-    animation-delay: 15s;
-    animation-duration: 1s;
+    animation-delay: 14s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards; 
 }
 
 #controls {
     animation-name: slide-down;
-    animation-delay: 15s;
-    animation-duration: 1s;
+    animation-delay: 14s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards; 
 }
 
