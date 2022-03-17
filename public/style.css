@@ -109,14 +109,14 @@ h1 {
 
 #hover-info {
     animation-name: slide-down;
-    animation-delay: 14s;
+    animation-delay: 15s;
     animation-duration: 1s;
     animation-fill-mode: forwards; 
 }
 
 #controls {
     animation-name: slide-down;
-    animation-delay: 14s;
+    animation-delay: 15s;
     animation-duration: 1s;
     animation-fill-mode: forwards; 
 }
