@@ -613,8 +613,8 @@ document.documentElement.addEventListener('mouseenter', function() {
 async function animateText () {
 	const node = document.querySelector("#type-text")
 
-	await sleep(1000)
-	node.innerText = ""
+	// await sleep(1000)
+	// node.innerText = ""
 	await node.type('Hello, World!')
 	await sleep(2000)
 	await node.delete('Hello, World!')
