@@ -414,13 +414,13 @@ document.body.onmouseup = function() {
 
 // Controls
 const scene = new THREE.Scene();
-// const texture = new THREE.TextureLoader().load('images/bliss.jpg');
+// const texture = new THREE.TextureLoader().load('images/sky.jpg');
 // scene.background = texture;
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 // const camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
-});
+}); 
 
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -440,7 +440,7 @@ const faceTexture = new THREE.TextureLoader().load('images/pfp.jpg');
 // Create Octahedron
 var geometry = new THREE.OctahedronGeometry( 10 , 0 );
 // const material = new THREE.MeshStandardMaterial( { color: 0xFFFFFF } );
-const material = new THREE.MeshBasicMaterial( { color: 0xFFFFFF, wireframe: true } );
+const material = new THREE.MeshNormalMaterial( { color: 0xFFFFFF, wireframe: true, wireframeLinewidth: 5 } );
 const octa = new THREE.Mesh( geometry, material );
 
 material.transparent = true;
@@ -455,7 +455,7 @@ const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(30,30,30);
 const pointLight2 = new THREE.PointLight(0xffffff);
 pointLight2.position.set(-30,-30,-30);
-scene.add(pointLight, pointLight2);
+// scene.add(pointLight, pointLight2);
 
 // Create Cubes
 var cubeGeometry = new THREE.BoxGeometry( 1.2, 1.2, 1.2 );
@@ -485,8 +485,8 @@ const group = new THREE.Group();
 group.add( cubeA, cubeB, cubeC, cubeD, cubeE, cubeF );
 // const group2 = new THREE.Group();
 // group2.add( sphereA, sphereB, sphereC, sphereD, sphereE, sphereF );
-scene.add( group, octa, ico );
-
+scene.add( group, octa );
+// scene.add(ico);
 // Check resize
 function onWindowResize(){
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -586,13 +586,11 @@ function moveCursor(e){
     curTxt.style.top=e.clientY-curTxtLen[1]+'px';
 }
 
-setTimeout(remove, 5000)
+// setTimeout(remove, 5000)
 
 function remove() {
     document.getElementById("fade").innerHTML = '';
 }
-
-setTimeout(updateTime, 900)
 
 function updateTime() {
 	displayText = true;
@@ -610,4 +608,45 @@ document.documentElement.addEventListener('mouseenter', function() {
 	mouseLeave = false;
 })
 
+
+// text animation
+async function animateText () {
+	const node = document.querySelector("#type-text")
+
+	await sleep(1000)
+	node.innerText = ""
+	await node.type('Hello, World!')
+	await sleep(2500)
+	await node.delete('Hello, World!')
+	await sleep(1000)
+	await node.type('I\'m Joey Wang.')
+}
+
+const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+
+class TypeAsync extends HTMLSpanElement {
+	get typeInterval () {
+		const randomMs = 200 * Math.random()
+		return randomMs < 50 ? 10 : randomMs
+	}
+
+	async type (text) {
+		for (let character of text) {
+			this.innerText += character
+			await sleep(this.typeInterval)
+		}
+	}
+
+	async delete (text) {
+		for (let character of text) {
+			this.innerText = this.innerText.slice(0, this.innerText.length -1)
+			await sleep(this.typeInterval)
+		}
+	}
+}
+
+customElements.define('type-async', TypeAsync, { extends: 'span' })
+
+animateText()
+setTimeout(updateTime, 10000)
 animate()
