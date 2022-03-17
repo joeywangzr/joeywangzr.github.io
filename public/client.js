@@ -403,6 +403,7 @@ THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 var displayText = false;
 var mouseLeave = true;
 var mouseOver = false;
+var mouseOverShape = false;
 // Check mouse
 var mouseDown = false;
 document.body.onmousedown = function() { 
@@ -440,7 +441,7 @@ const faceTexture = new THREE.TextureLoader().load('images/pfp.jpg');
 // Create Octahedron
 var geometry = new THREE.OctahedronGeometry( 10 , 0 );
 // const material = new THREE.MeshStandardMaterial( { color: 0xFFFFFF } );
-const material = new THREE.MeshNormalMaterial( { color: 0xFFFFFF, wireframe: true, wireframeLinewidth: 5 } );
+const material = new THREE.MeshNormalMaterial( { wireframe: true, wireframeLinewidth: 5 } );
 const octa = new THREE.Mesh( geometry, material );
 
 material.transparent = true;
@@ -483,9 +484,11 @@ cubeF.position.set( -10, 0, 0 );
 // Group together, add to scene
 const group = new THREE.Group();
 group.add( cubeA, cubeB, cubeC, cubeD, cubeE, cubeF );
+const octaShape = new THREE.Group();
+octaShape.add(octa)
 // const group2 = new THREE.Group();
 // group2.add( sphereA, sphereB, sphereC, sphereD, sphereE, sphereF );
-scene.add( group, octa );
+scene.add( group, octaShape );
 // scene.add(ico);
 // Check resize
 function onWindowResize(){
@@ -532,22 +535,39 @@ function hover() {
     }
 }
 
+function reset_all() {
+	for (let i = 0; i < octaShape.children.length; i++) {
+		mouseOverShape = false;
+	}
+}
+
+function hover_all() {
+    raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(octaShape.children);
+    for (let i = 0; i < intersects.length; i++) {
+		if (mouseDown == true) {
+			mouseOverShape = true;
+		}
+	}
+}
+
 function animate() {
     requestAnimationFrame( animate );
     reset();
     hover();
-    if (!mouseOver || mouseLeave) {
+    reset_all();
+    hover_all();
+    if ((!mouseOverShape && !mouseOver) || mouseLeave) {
         group.rotation.x += 0.001;
         group.rotation.y += 0.001;
         group.rotation.z += 0.001;
-        octa.rotation.x += 0.001;
-        octa.rotation.y += 0.001;
-        octa.rotation.z += 0.001;
+        octaShape.rotation.x += 0.001;
+        octaShape.rotation.y += 0.001;
+        octaShape.rotation.z += 0.001;
     }
-	// console.log(mouseLeave)
-    ico.rotation.x -= 0.01;
-    ico.rotation.y -= 0.01;
-    ico.rotation.z -= 0.01;
+    // ico.rotation.x -= 0.01;
+    // ico.rotation.y -= 0.01;
+    // ico.rotation.z -= 0.01;
 
     controls.update();
     renderer.render( scene, camera );
@@ -594,7 +614,7 @@ function remove() {
 
 function updateTime() {
 	displayText = true;
-	mouseLeave = false;
+	// mouseLeave = false;
 }
 
 window.addEventListener( 'resize', onWindowResize, false );
@@ -615,10 +635,10 @@ async function animateText () {
 
 	// await sleep(1000)
 	// node.innerText = ""
-	await node.type('Hello, World!')
-	await sleep(2000)
-	await node.delete('Hello, World!')
-	await sleep(1000)
+	await node.type('Hello World!')
+	await sleep(500)
+	await node.delete('Hello World!')
+	await sleep(500)
 	await node.type('I\'m Joey Wang.')
 }
 
@@ -648,5 +668,5 @@ class TypeAsync extends HTMLSpanElement {
 customElements.define('type-async', TypeAsync, { extends: 'span' })
 
 animateText()
-setTimeout(updateTime, 10000)
+setTimeout(updateTime, 5000)
 animate()

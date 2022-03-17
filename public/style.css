@@ -15,15 +15,15 @@ body {
 
     animation-iteration-count: 1;
     animation-name: name-slide;
-    animation-delay: 10s;
-    animation-duration: 2.5s; 
+    animation-delay: 5.5s;
+    animation-duration: 2s; 
     animation-fill-mode: forwards;
 }
 
 .blinking-cursor {
     user-select: none;
     /* animation: blink 1s steps(2, start) infinite;  */
-    animation: blink 1s steps(2, start) infinite , name-slide 4s 10s forwards;
+    animation: blink 1s steps(2, start) infinite , name-slide 2s 5.5s forwards;
 }
 
 #info {
@@ -34,8 +34,8 @@ body {
     margin-top: 10%;
     animation-iteration-count: 1;
     animation-name: div-slide;
-    animation-delay: 10.5s;
-    animation-duration: 2s; 
+    animation-delay: 6s;
+    animation-duration: 1.5s; 
     animation-fill-mode: forwards;
     /* background-color: black; */
 }
@@ -59,7 +59,7 @@ canvas {
     left: 0;
     animation-iteration-count: 1;
     animation-name: fade-in;
-    animation-delay: 11s;
+    animation-delay: 6.5s;
     animation-duration: 4s; 
     animation-fill-mode: forwards;
 }
@@ -102,22 +102,22 @@ h1 {
 
 #comp-eng {
     animation-name: slide-down;
-    animation-delay: 13s;
+    animation-delay: 7.5s;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
 
 #hover-info {
     animation-name: slide-down;
-    animation-delay: 14s;
-    animation-duration: 1.5s;
+    animation-delay: 8.5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards; 
 }
 
 #controls {
     animation-name: slide-down;
-    animation-delay: 14s;
-    animation-duration: 1.5s;
+    animation-delay: 8.5s;
+    animation-duration: 2s;
     animation-fill-mode: forwards; 
 }
 
