@@ -10,7 +10,7 @@ if drag then not move
 
 // import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from './jsm/controls/OrbitControls.js'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // THREEX.DOMEVENTS.JS
 
@@ -430,13 +430,13 @@ camera.position.setZ(25);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 // Textures
-const githubTexture = new THREE.TextureLoader().load('images/github_logo.png');
-const youtubeTexture = new THREE.TextureLoader().load('images/youtube.png');
-const linkedinTexture = new THREE.TextureLoader().load('images/linkedin.png');
-const devpostTexture = new THREE.TextureLoader().load('images/devpost.jpg');
-const profileTexture = new THREE.TextureLoader().load('images/profile.jpg');
-const projectsTexture = new THREE.TextureLoader().load('images/projects.webp');
-const faceTexture = new THREE.TextureLoader().load('images/pfp.jpg');
+const githubTexture = new THREE.TextureLoader().load('/github_logo.png');
+const youtubeTexture = new THREE.TextureLoader().load('/youtube.png');
+const linkedinTexture = new THREE.TextureLoader().load('/linkedin.png');
+const devpostTexture = new THREE.TextureLoader().load('/devpost.jpg');
+const profileTexture = new THREE.TextureLoader().load('/profile.jpg');
+const projectsTexture = new THREE.TextureLoader().load('/projects.webp');
+const faceTexture = new THREE.TextureLoader().load('/pfp.jpg');
 
 // Create Octahedron
 var geometry = new THREE.OctahedronGeometry( 10 , 0 );
