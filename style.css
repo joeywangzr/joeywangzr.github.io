@@ -35,7 +35,7 @@ body {
     animation-iteration-count: 1;
     animation-name: div-slide;
     animation-delay: 5.5s;
-    animation-duration: 1.5s; 
+    animation-duration: 2s; 
     animation-fill-mode: forwards;
     /* background-color: black; */
 }
@@ -59,7 +59,7 @@ canvas {
     left: 0;
     animation-iteration-count: 1;
     animation-name: fade-in;
-    animation-delay: 6.5s;
+    animation-delay: 6s;
     animation-duration: 4s; 
     animation-fill-mode: forwards;
 }
