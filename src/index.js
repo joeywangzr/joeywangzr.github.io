@@ -535,29 +535,29 @@ function hover() {
     }
 }
 
-function reset_all() {
-	for (let i = 0; i < octaShape.children.length; i++) {
-		mouseOverShape = false;
-	}
-}
+// function reset_all() {
+// 	for (let i = 0; i < octaShape.children.length; i++) {
+// 		mouseOverShape = false;
+// 	}
+// }
 
-function hover_all() {
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(octaShape.children);
-    for (let i = 0; i < intersects.length; i++) {
-		if (mouseDown == true) {
-			mouseOverShape = true;
-		}
-	}
-}
+// function hover_all() {
+//     raycaster.setFromCamera(mouse, camera);
+//     const intersects = raycaster.intersectObjects(octaShape.children);
+//     for (let i = 0; i < intersects.length; i++) {
+// 		if (mouseDown == true) {
+// 			mouseOverShape = true;
+// 		}
+// 	}
+// }
 
 function animate() {
     requestAnimationFrame( animate );
     reset();
     hover();
-    reset_all();
-    hover_all();
-    if ((!mouseOverShape && !mouseOver) || mouseLeave) {
+    // reset_all();
+    // hover_all();
+    if ((!mouseDown && !mouseOver) || mouseLeave) {
         group.rotation.x += 0.001;
         group.rotation.y += 0.001;
         group.rotation.z += 0.001;
