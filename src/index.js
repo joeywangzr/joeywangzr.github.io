@@ -555,6 +555,7 @@ function animate() {
     requestAnimationFrame( animate );
     reset();
     hover();
+	console.log(mouseLeave);
     // reset_all();
     // hover_all();
     if ((!mouseDown && !mouseOver) || mouseLeave) {
