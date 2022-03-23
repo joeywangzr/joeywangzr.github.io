@@ -431,7 +431,6 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 controls.enableZoom = false;
 controls.enablePan = false;
-// controls.enableRotate = true;
 
 // Textures
 const githubTexture = new THREE.TextureLoader().load('github_logo.png');
