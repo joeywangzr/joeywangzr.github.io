@@ -429,6 +429,9 @@ camera.position.setZ(25);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
+controls.enableZoom = false;
+controls.enablePan = false;
+
 // Textures
 const githubTexture = new THREE.TextureLoader().load('github_logo.png');
 const youtubeTexture = new THREE.TextureLoader().load('youtube.png');
