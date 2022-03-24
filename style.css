@@ -107,7 +107,7 @@ h1 {
     animation-fill-mode: forwards;
 }
 
-.underline {
+#underline {
     text-decoration: underline;
 }
 
