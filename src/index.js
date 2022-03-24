@@ -618,7 +618,12 @@ function remove() {
 
 function updateTime() {
 	displayText = true;
-	// mouseLeave = false;
+}
+
+function updateMouse() {
+	if (mouseLeave == true) {
+		mouseLeave = false;
+	}
 }
 
 window.addEventListener( 'resize', onWindowResize, false );
@@ -673,4 +678,5 @@ customElements.define('type-async', TypeAsync, { extends: 'span' })
 
 animateText()
 setTimeout(updateTime, 6000)
+setTimeout(updateMouse, 6000)
 animate()
