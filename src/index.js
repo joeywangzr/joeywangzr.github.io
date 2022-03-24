@@ -538,21 +538,11 @@ function hover() {
     }
 }
 
-// function reset_all() {
-// 	for (let i = 0; i < octaShape.children.length; i++) {
-// 		mouseOverShape = false;
-// 	}
-// }
-
-// function hover_all() {
-//     raycaster.setFromCamera(mouse, camera);
-//     const intersects = raycaster.intersectObjects(octaShape.children);
-//     for (let i = 0; i < intersects.length; i++) {
-// 		if (mouseDown == true) {
-// 			mouseOverShape = true;
-// 		}
-// 	}
-// }
+function reset_all() {
+	for (let i = 0; i < octaShape.children.length; i++) {
+		mouseOverShape = false;
+	}
+}
 
 function animate() {
     requestAnimationFrame( animate );
@@ -617,7 +607,16 @@ function remove() {
 }
 
 function updateTime() {
+	raycaster.setFromCamera(mouse, camera);
+    const intersects = raycaster.intersectObjects(octaShape.children);
+    for (let i = 0; i < intersects.length; i++) {
+		mouseOverShape = true;
+	}
 	displayText = true;
+	if (mouseOverShape == true) {
+		mouseLeave = false;
+		reset_all()
+	}
 }
 
 function updateMouse() {
@@ -678,5 +677,4 @@ customElements.define('type-async', TypeAsync, { extends: 'span' })
 
 animateText()
 setTimeout(updateTime, 6000)
-setTimeout(updateMouse, 6000)
 animate()
