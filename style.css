@@ -100,7 +100,7 @@ h1 {
     background-color: black;
 }
 
-.comp-eng {
+#comp-eng {
     animation-name: slide-down;
     animation-delay: 7.5s;
     animation-duration: 1.5s;
