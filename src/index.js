@@ -401,7 +401,7 @@ THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 
 // MY CODE STARTS HERE
 var displayText = false;
-var mouseLeave = false;
+var mouseLeave = true;
 var mouseOver = false;
 var mouseOverShape = false;
 // Check mouse
@@ -618,7 +618,7 @@ function remove() {
 
 function updateTime() {
 	displayText = true;
-	// mouseLeave = false;
+	mouseLeave = false;
 }
 
 window.addEventListener( 'resize', onWindowResize, false );
@@ -672,5 +672,5 @@ class TypeAsync extends HTMLSpanElement {
 customElements.define('type-async', TypeAsync, { extends: 'span' })
 
 animateText()
-setTimeout(updateTime, 5000)
+setTimeout(updateTime, 6000)
 animate()
