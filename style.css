@@ -107,6 +107,10 @@ h1 {
     animation-fill-mode: forwards;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 #hover-info {
     animation-name: slide-down;
     animation-delay: 8.5s;
