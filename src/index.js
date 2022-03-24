@@ -401,7 +401,7 @@ THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 
 // MY CODE STARTS HERE
 var displayText = false;
-var mouseLeave = true;
+var mouseLeave = false;
 var mouseOver = false;
 var mouseOverShape = false;
 // Check mouse
