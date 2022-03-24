@@ -98,9 +98,19 @@ h1 {
     font-family: 'Cousine', monospace;
     font-weight: normal;
     background-color: black;
+    line-height: 1.4;
 }
 
-#comp-eng {
+.url {
+    opacity: 100;
+    width: 60%;
+    color: #FFF;
+    font-family: 'Cousine', monospace;
+    font-weight: normal;
+    background-color: black;
+}
+
+#about-me {
     animation-name: slide-down;
     animation-delay: 7.5s;
     animation-duration: 1.5s;
