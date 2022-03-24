@@ -618,7 +618,7 @@ function remove() {
 
 function updateTime() {
 	displayText = true;
-	mouseLeave = false;
+	// mouseLeave = false;
 }
 
 window.addEventListener( 'resize', onWindowResize, false );
