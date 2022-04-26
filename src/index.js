@@ -584,7 +584,7 @@ domEvents.addEventListener(cubeD, 'click', event => {
     window.open('https://devpost.com/joeywangzr');
 })
 domEvents.addEventListener(cubeE, 'click', event => {
-    window.open('https://docs.google.com/viewer?url=https://github.com/joeywangzr/joeywangzr.github.io/raw/before-webpack/resume/resume.pdf');
+    window.open('https://www.joeywang.ca/resume.pdf');
 })
 domEvents.addEventListener(cubeF, 'click', event => {
     window.open('./comingsoon.html');
