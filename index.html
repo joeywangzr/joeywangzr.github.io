@@ -4,35 +4,88 @@
     <meta charset="utf-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/ayaya.jpg">
     <title>Joey Wang</title>
+
+    <link rel="stylesheet" href="style.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cousine&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
 
   </head>
 
   <body>
-    <canvas id = "bg"></canvas>
+    <canvas id ="bg"></canvas>
+    <div id="header">
+      <ul id="navbar">
+        <li class="navbar-item" id="name">Joey Wang</li>
+        <li class="navbar-item"><a href="#news">Projects</a></li>
+        <li class="navbar-item"><a href="#contact">Resume</a></li>
+        <li class="navbar-item"><a href="#about">Contact</a></li>
+        <li class="navbar-item" id="mode">
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input id="toggle" class="toggle" type="checkbox">
+              <div class="slider round"></div>
+            </label>
+            <script>
+              const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+              const currentTheme = localStorage.getItem('theme');
+      
+              if (currentTheme) {
+                  document.documentElement.setAttribute('data-theme', currentTheme);
+                
+                  if (currentTheme === 'dark') {
+                      toggleSwitch.checked = true;
+                  }
+              }
+      
+              function switchTheme(e) {
+                  if (e.target.checked) {
+                      document.documentElement.setAttribute('data-theme', 'dark');
+                      localStorage.setItem('theme', 'dark');
+                  }
+                  else {        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                  }    
+              }
+      
+              toggleSwitch.addEventListener('change', switchTheme, false);
+            </script>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-    
-    <div id="info">
-      <div id="animated-text">
-        <span class="name-text" is="type-async" id="type-text"></span>
-        <span class="name-text blinking-cursor">_</span>
-      </div>
+    <div id="welcome">
+      <h3 id="sub"></h3>
 
-      <div id="sub-info">
-        <h3 id="about-me" class="subtitle">I'm currently a Computer Engineering Student at the University of Waterloo. I love coding and learning new things!</h3>
-        <h3 id="about-me" class="subtitle">Check out my <a id="underline" class="url" href="./comingsoon.html" target="_blank">resume</a> and <a id="underline" class="url" href="./comingsoon.html" target="_blank">projects</a>.</h3>
-        <h3 id="hover-info" class="subtitle">Hover on a box to learn more!</h3>
-      </div>
+      <script>
+        var i = 0;
+        var txt = 'Welcome to my portfolio site!';
+        var speed = 50;
+
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("sub").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+
+        window.onload = function() {
+          typeWriter();
+        };
+      </script>
+
+    </div>
+
+
+    <div id="subtitle">
+      <h3 class="sub1">I'm a Computer Engineering Student at the University of Waterloo.</h3>
+      <h3 class="sub2">I’m passionate about bringing awesome ideas to life through coding and my own imagination! Check out my <a>projects</a> and <a>resume</a>.</h3>  
     </div>
     
     <script type="module" src="main.js"></script>

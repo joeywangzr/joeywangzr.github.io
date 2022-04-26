@@ -417,12 +417,14 @@ document.body.onmouseup = function() {
 const scene = new THREE.Scene();
 // const texture = new THREE.TextureLoader().load('images/sky.jpg');
 // scene.background = texture;
+
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 // const camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 }); 
 
+renderer.setClearColor( 0x000000, 0 ); 
 renderer.setPixelRatio( window.devicePixelRatio );
 renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(25);
@@ -439,26 +441,25 @@ const linkedinTexture = new THREE.TextureLoader().load('linkedin.png');
 const devpostTexture = new THREE.TextureLoader().load('devpost.jpg');
 const profileTexture = new THREE.TextureLoader().load('profile.jpg');
 const projectsTexture = new THREE.TextureLoader().load('projects.jpg');
-const faceTexture = new THREE.TextureLoader().load('pfp.jpg');
+// const faceTexture = new THREE.TextureLoader().load('pfp.jpg');
 
 // Create Octahedron
-var geometry = new THREE.OctahedronGeometry( 10 , 0 );
-// const material = new THREE.MeshStandardMaterial( { color: 0xFFFFFF } );
+var geometry = new THREE.OctahedronGeometry( 7.5 , 0 );
 const material = new THREE.MeshNormalMaterial( { wireframe: true, wireframeLinewidth: 5 } );
 const octa = new THREE.Mesh( geometry, material );
 
 material.transparent = true;
 material.opacity = 0.6;
 
-var icoGeometry = new THREE.SphereGeometry( 4 );
-const icoMaterial = new THREE.MeshBasicMaterial( { map: faceTexture } );
-const ico = new THREE.Mesh( icoGeometry, icoMaterial );
+// var icoGeometry = new THREE.SphereGeometry( 4 );
+// const icoMaterial = new THREE.MeshBasicMaterial( { map: faceTexture } );
+// const ico = new THREE.Mesh( icoGeometry, icoMaterial );
 
 // Add light
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(30,30,30);
-const pointLight2 = new THREE.PointLight(0xffffff);
-pointLight2.position.set(-30,-30,-30);
+// const pointLight = new THREE.PointLight(0xffffff);
+// pointLight.position.set(30,30,30);
+// const pointLight2 = new THREE.PointLight(0xffffff);
+// pointLight2.position.set(-30,-30,-30);
 // scene.add(pointLight, pointLight2);
 
 // Create Cubes
@@ -477,12 +478,12 @@ const cubeD = new THREE.Mesh( cubeGeometry, cubeMaterialD );
 const cubeE = new THREE.Mesh( cubeGeometry, cubeMaterialE );
 const cubeF = new THREE.Mesh( cubeGeometry, cubeMaterialF );
 
-cubeA.position.set( 10, 0, 0 );
-cubeB.position.set( 0, 10, 0 );
-cubeC.position.set( 0, 0, 10 );
-cubeD.position.set( 0, 0, -10 );
-cubeE.position.set( 0, -10, 0 );
-cubeF.position.set( -10, 0, 0 );
+cubeA.position.set( 7.5, 0, 0 );
+cubeB.position.set( 0, 7.5, 0 );
+cubeC.position.set( 0, 0, 7.5 );
+cubeD.position.set( 0, 0, -7.5 );
+cubeE.position.set( 0, -7.5, 0 );
+cubeF.position.set( -7.5, 0, 0 );
 
 // Group together, add to scene
 const group = new THREE.Group();
@@ -636,45 +637,6 @@ document.documentElement.addEventListener('mouseenter', function() {
 	mouseLeave = false;
 })
 
-
-// text animation
-async function animateText () {
-	const node = document.querySelector("#type-text")
-
-	// await sleep(1000)
-	// node.innerText = ""
-	await node.type('Hello World!')
-	await sleep(500)
-	await node.delete('Hello World!')
-	await sleep(500)
-	await node.type('I\'m Joey Wang.')
-}
-
-const sleep = time => new Promise(resolve => setTimeout(resolve, time))
-
-class TypeAsync extends HTMLSpanElement {
-	get typeInterval () {
-		const randomMs = 200 * Math.random()
-		return randomMs < 50 ? 10 : randomMs
-	}
-
-	async type (text) {
-		for (let character of text) {
-			this.innerText += character
-			await sleep(this.typeInterval)
-		}
-	}
-
-	async delete (text) {
-		for (let character of text) {
-			this.innerText = this.innerText.slice(0, this.innerText.length -1)
-			await sleep(this.typeInterval)
-		}
-	}
-}
-
-customElements.define('type-async', TypeAsync, { extends: 'span' })
-
-animateText()
-setTimeout(updateTime, 6000)
+// animateText()
+setTimeout(updateTime, 1200)
 animate()
