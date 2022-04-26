@@ -400,6 +400,7 @@ THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 }
 
 // MY CODE STARTS HERE
+var addIco = false;
 var displayText = false;
 var mouseLeave = true;
 var mouseOver = false;
@@ -441,7 +442,7 @@ const linkedinTexture = new THREE.TextureLoader().load('linkedin.png');
 const devpostTexture = new THREE.TextureLoader().load('devpost.jpg');
 const profileTexture = new THREE.TextureLoader().load('profile.jpg');
 const projectsTexture = new THREE.TextureLoader().load('projects.jpg');
-// const faceTexture = new THREE.TextureLoader().load('pfp.jpg');
+const faceTexture = new THREE.TextureLoader().load('pfp.jpg');
 
 // Create Octahedron
 var geometry = new THREE.OctahedronGeometry( 7.5 , 0 );
@@ -451,9 +452,9 @@ const octa = new THREE.Mesh( geometry, material );
 material.transparent = true;
 material.opacity = 0.6;
 
-// var icoGeometry = new THREE.SphereGeometry( 4 );
-// const icoMaterial = new THREE.MeshBasicMaterial( { map: faceTexture } );
-// const ico = new THREE.Mesh( icoGeometry, icoMaterial );
+var icoGeometry = new THREE.SphereGeometry( 4 );
+const icoMaterial = new THREE.MeshBasicMaterial( { map: faceTexture } );
+const ico = new THREE.Mesh( icoGeometry, icoMaterial );
 
 // Add light
 // const pointLight = new THREE.PointLight(0xffffff);
@@ -493,7 +494,7 @@ octaShape.add(octa)
 // const group2 = new THREE.Group();
 // group2.add( sphereA, sphereB, sphereC, sphereD, sphereE, sphereF );
 scene.add( group, octaShape );
-// scene.add(ico);
+
 // Check resize
 function onWindowResize(){
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -560,9 +561,9 @@ function animate() {
         octaShape.rotation.y += 0.001;
         octaShape.rotation.z += 0.001;
     }
-    // ico.rotation.x -= 0.01;
-    // ico.rotation.y -= 0.01;
-    // ico.rotation.z -= 0.01;
+    ico.rotation.x -= 0.01;
+    ico.rotation.y -= 0.01;
+    ico.rotation.z -= 0.01;
 
     controls.update();
     renderer.render( scene, camera );
@@ -640,3 +641,14 @@ document.documentElement.addEventListener('mouseenter', function() {
 // animateText()
 setTimeout(updateTime, 1300)
 animate()
+
+document.getElementById("easteregg").onclick = function() {
+    if (addIco == false) {
+		addIco = true;
+		scene.add(ico);
+	}
+	else {
+		addIco = false;
+		scene.remove(ico);
+	}
+}

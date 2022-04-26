@@ -150,11 +150,6 @@ h1 {
     50% { border-color: orange }
 }
 
-#cursor {
-    color: white;
-    font-size: 35px;
-}
-
 #subtitle {
     position: absolute;
     top: 77%;
@@ -202,3 +197,16 @@ h1 {
 	 color: #fa0;
 	 box-shadow: inset 0 0 0 var(--size), calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size), var(--offset-orthogonal) 0 0 var(--ray-size), 0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size), 0 var(--offset-orthogonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size), var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size), var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 }
+
+.secret {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.secretbutton {
+    opacity: 0;
+    width: 10px;
+    height: 20px;
+}
+
