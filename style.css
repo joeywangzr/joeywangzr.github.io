@@ -210,3 +210,11 @@ h1 {
     height: 20px;
 }
 
+.taglinebutton {
+    font-family: Poppins;
+    font-weight: lighter;
+    font-size: 18px;
+    color: var(--text-color);
+    transition: color 500ms;
+    text-decoration: underline;
+}
