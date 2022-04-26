@@ -436,13 +436,13 @@ controls.enableZoom = false;
 controls.enablePan = false;
 
 // Textures
-const githubTexture = new THREE.TextureLoader().load('github_logo.png');
-const youtubeTexture = new THREE.TextureLoader().load('youtube.png');
-const linkedinTexture = new THREE.TextureLoader().load('linkedin.png');
-const devpostTexture = new THREE.TextureLoader().load('devpost.jpg');
-const profileTexture = new THREE.TextureLoader().load('profile.jpg');
-const projectsTexture = new THREE.TextureLoader().load('projects.jpg');
-const faceTexture = new THREE.TextureLoader().load('pfp.jpg');
+const githubTexture = new THREE.TextureLoader().load('images/github_logo.png');
+const youtubeTexture = new THREE.TextureLoader().load('images/youtube.png');
+const linkedinTexture = new THREE.TextureLoader().load('images/linkedin.png');
+const devpostTexture = new THREE.TextureLoader().load('images/devpost.jpg');
+const profileTexture = new THREE.TextureLoader().load('images/profile.jpg');
+const projectsTexture = new THREE.TextureLoader().load('images/projects.jpg');
+const faceTexture = new THREE.TextureLoader().load('images/pfp.jpg');
 
 // Create Octahedron
 var geometry = new THREE.OctahedronGeometry( 7.5 , 0 );
