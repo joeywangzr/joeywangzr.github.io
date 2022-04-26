@@ -583,7 +583,7 @@ domEvents.addEventListener(cubeD, 'click', event => {
     window.open('https://devpost.com/joeywangzr');
 })
 domEvents.addEventListener(cubeE, 'click', event => {
-    window.open('./comingsoon.html');
+    window.open('https://docs.google.com/viewer?url=https://github.com/joeywangzr/joeywangzr.github.io/raw/before-webpack/resume/resume.pdf');
 })
 domEvents.addEventListener(cubeF, 'click', event => {
     window.open('./comingsoon.html');
@@ -638,5 +638,5 @@ document.documentElement.addEventListener('mouseenter', function() {
 })
 
 // animateText()
-setTimeout(updateTime, 1200)
+setTimeout(updateTime, 1300)
 animate()
