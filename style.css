@@ -112,7 +112,6 @@ body {
 
 canvas {
     opacity: 1;
-    position: fixed;
     top: 0;
     left: 0;
 }
@@ -171,7 +170,6 @@ h1 {
 }
 
 #subtitle1 {
-    margin-left: -8px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -190,7 +188,6 @@ h1 {
 }
 
 #subtitle2 {
-    margin-left: -8px;
     position: absolute;
     text-align: center;
     width: 100%;
@@ -199,7 +196,6 @@ h1 {
 }
 
 .sub2 {
-    /* width: 70%; */
     font-family: Poppins;
     font-weight: lighter;
     font-size: 18px;
@@ -247,4 +243,10 @@ h1 {
     color: var(--text-color);
     transition: color 500ms;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+    .remove-mobile {
+      display: none;
+    }
 }
