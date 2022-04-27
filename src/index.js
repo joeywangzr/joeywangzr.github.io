@@ -615,6 +615,7 @@ function updateTime() {
 		mouseOverShape = true;
 	}
 	displayText = true;
+	mouseLeave = false;
 	if (mouseOverShape == true) {
 		mouseLeave = false;
 		reset_all()
