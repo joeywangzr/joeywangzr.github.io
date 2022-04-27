@@ -87,6 +87,24 @@ body {
     width: 100%;
 }
 
+.header-name {
+    font-family: Poppins;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.header-name a {
+    display: block;
+    color: var(--text-color);
+    transition: color 500ms;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header-name a:hover:not(.active) {
+    text-decoration: normal;
+}
+
 .navbar-item {
     font-family: Poppins;
     font-size: 20px;
@@ -104,10 +122,6 @@ body {
 
 .navbar-item a:hover:not(.active) {
     text-decoration: underline;
-}
-
-.active {
-    background-color: #04AA6D;
 }
 
 canvas {
