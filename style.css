@@ -111,8 +111,9 @@ body {
 }
 
 canvas {
+    height: 100px;
     opacity: 1;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 }

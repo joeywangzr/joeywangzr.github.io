@@ -639,7 +639,7 @@ document.documentElement.addEventListener('mouseenter', function() {
 })
 
 // animateText()
-setTimeout(updateTime, 1300)
+setTimeout(updateTime, 1700)
 animate()
 
 document.getElementById("easteregg").onclick = function() {
