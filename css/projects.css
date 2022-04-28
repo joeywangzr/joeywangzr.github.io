@@ -125,7 +125,7 @@ body {
 }
 
 .navbar-item a:hover:not(.active) {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 h1 {
