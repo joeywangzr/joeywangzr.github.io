@@ -212,6 +212,11 @@ h1 {
   margin-bottom: 10px;
   position: relative;
   color: var(--card-text);
+  transition:  ease 300ms;
+}
+.card-bottom:hover {
+    transform: translate(0, -5px);
+
 }
 #svg {
     height: 24.5px;
