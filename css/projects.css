@@ -218,7 +218,7 @@ h1 {
     fill: var(--card-text);
 }
 .img-header {
-    max-width:100%;
+    width:100%;
     height:auto;
     object-fit: cover;
 }
@@ -262,6 +262,7 @@ h1 {
         flex-direction: column;
     }
     .projects-container2{
+        margin-top: 0%;
         display: flex;
         width: 100%;
         justify-content: center;
