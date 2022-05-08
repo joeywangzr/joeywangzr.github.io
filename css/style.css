@@ -2,7 +2,7 @@
 http-server -c-1
 npx webpack
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:40");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:40&display=swap");
 
 :root {
     --bg-color: #2c2c2c;

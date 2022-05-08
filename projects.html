@@ -7,184 +7,226 @@
     <link rel="icon" type="image/x-icon" href="images/ayaya.jpg">
     <title>Joey Wang</title>
 
-    <link rel="stylesheet" href="css/projects.css">
 
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/projects.css">
-  
+
   </head>
   
   <body>
-    <div id="header">
-      <ul id="navbar">
-        <li class="header-name" id="name"><a href="https://joeywang.ca">Joey Wang</a></li></li>
-        <li class="navbar-item remove-mobile"><a href="https://joeywang.ca/projects">Projects</a></li>
-        <li class="navbar-item remove-mobile"><a href="https://www.joeywang.ca/resume.pdf" target="_blank">Resume</a></li>
-        <li class="navbar-item" id="mode">
-          <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-              <input id="toggle" class="toggle" type="checkbox">
-              <div class="slider round"></div>
-            </label>
-            <script>
-              const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-              const currentTheme = localStorage.getItem('theme');
-      
-              if (currentTheme) {
-                  document.documentElement.setAttribute('data-theme', currentTheme);
+    <nav id="mainNav" class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="name" href="https://joeywang.ca">Joey Wang</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="https://joeywang.ca/projects">Projects</a>
+            <a class="nav-item nav-link" href="https://www.joeywang.ca/resume.pdf" target="_blank">Resume</a>
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                <input id="toggle" class="toggle" type="checkbox">
+                <div class="slider round"></div>
+              </label>
+              <script>
+                const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+                let darkModeOn = false;
                 
-                  if (currentTheme === 'dark') {
-                      toggleSwitch.checked = true;
+                document.addEventListener("DOMContentLoaded", () => {
+                  // When the DOM is loaded, we should check the user's theme preference
+                  const currentTheme = localStorage.getItem('theme');
+                  if (currentTheme) { // check if theme is defined i.e. has the user set their theme preference before
+                    if (currentTheme == 'dark'){
+                      darkModeOn = true;
+                    }
+                    else {
+                      darkModeOn = false;
+                    }
                   }
-              }
+                  else {
+                    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                      darkModeOn = true;
+                    } else { // If not set AND system doesn't have a preference, check the button since attribute is not defined yet
+                      if (e.target.checked) {
+                        darkModeOn = true;
+                      } else {
+                        darkModeOn = false;
+                      }
+                    }
+                  }
+                  // First figure out if dark mode is on or off, then we can set the lighting mode
+                  // This improves the maintainability of our code since we write the lighting code here once :3
+                  if (darkModeOn) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.getElementById("mainNav").classList.add('bg-dark');
+                    toggleSwitch.checked = true;
+                  } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    document.getElementById("mainNav").classList.add('bg-light');
+                    toggleSwitch.checked = false;
+                  }
+                  
+                })
 
-              function switchTheme(e) {
-                  if (e.target.checked) {
+                function toggleDarkMode(e) {
+                    if (e.target.checked) {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                        document.getElementById("mainNav").classList.remove('bg-dark');
+                        document.getElementById("mainNav").classList.remove('navbar-dark');
+                    }
+                    else {
                       document.documentElement.setAttribute('data-theme', 'dark');
                       localStorage.setItem('theme', 'dark');
-                  }
-                  else {        document.documentElement.setAttribute('data-theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                  }    
-              }
-      
-              toggleSwitch.addEventListener('change', switchTheme, false);
-            </script>
-          </div>
-        </li>
-      </ul>
+                      document.getElementById("mainNav").classList.add('bg-dark');
+                      document.getElementById("mainNav").classList.add('navbar-dark');
+                    }    
+                }
         
-    </div>
-
-  <div class="projects-container">
-    <div class="card">
-      <div class="card-top">
-        <img class="img-header" src="images/Yuumi_0.jpg">
-      </div>
-      <div class="card-bottom">
-        <div class="top-section">
-          <h3 class="project-title">Yuumi Bot</h3>
-          <p class="project-description">Python</p>
+                toggleSwitch.addEventListener('change', toggleDarkMode, false);
+              </script>
+            </div>
+          </div>
         </div>
-        <div class="links">
-          <p class="links-section">
+      </div>
+    </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="card-top">
+          <img class="img-header" src="images/Yuumi_0.jpg">
+        </div>
+        <div class="card-bottom">
+          <div class="top-section">
+            <h3 class="project-title">Yuumi Bot</h3>
+            <p class="project-description">Python</p>
+          </div>
+          <div class="links">
+            <p class="links-section">
             <a href="https://github.com/Allan-Cao/yuumi-bot" target="_blank">
-              <i class="fa fa-github" style="font-size:32px"></i>
-            </a>
-          </p>      
+            <i class="fa fa-github" style="font-size:32px"></i></a>
+            </p>      
+          </div>
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-top">
-        <img class="img-header" id="sizzle" src="images/sizzle.jpg">
-      </div>
-      <div class="card-bottom">
-        <div class="title-section">
-          <h3 class="project-title">Sizzle</h3>
-          <p class="project-description">Android Studio, Google Cloud Platform, Java, Python</p>
+      <div class="col-lg-4 col-md-6">
+        <div class="card-top">
+          <img class="img-header" id="sizzle" src="images/sizzle.jpg">
         </div>
-        <div class="links">
-          <p class="links-section">
-            <a href="https://devpost.com/software/yum-8gxtbc" target="_blank">
-              <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.3 242" enable-background="new 0 0 280.3 242" xml:space="preserve">
-                <g id="XMLID_1_">
-                    <path id="XMLID_6_" d="M133.7,76H118v90h14.7c30.9,0,45.1-18.1,45.1-45C177.8,90.9,164.9,76,133.7,76z"/>
-                    <path id="XMLID_9_" d="M210.2,0H70.1L0,121l70.1,121h140.1l70.1-121L210.2,0z M132.7,195H89V47h45.8c42.1,0,73.3,20.1,73.3,74   C208.1,172.8,170.6,195,132.7,195z"/>
-                </g>
-              </svg>
-            </a>
-            <a href="https://github.com/henrywangzh/RestaurantSignPennApps" target="_blank">
-              <i class="fa fa-github" style="font-size:32px"></i>
-            </a>
-          </p>   
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-top">
-        <img class="img-header" src="images/covid.jpg">
-      </div>
-      <div class="card-bottom">
-        <div class="title-section">
-          <h3 class="project-title">Covid Classroom</h3>
-          <p class="project-description">Firebase, Javascript, Node.js</p>
-        </div>
-        <div class="links">
-          <p class="links-section">
-            <a href="https://devpost.com/software/covid-classroom" target="_blank">
-              <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.3 242" enable-background="new 0 0 280.3 242" xml:space="preserve">
-                <g id="XMLID_1_">
-                    <path id="XMLID_6_" d="M133.7,76H118v90h14.7c30.9,0,45.1-18.1,45.1-45C177.8,90.9,164.9,76,133.7,76z"/>
-                    <path id="XMLID_9_" d="M210.2,0H70.1L0,121l70.1,121h140.1l70.1-121L210.2,0z M132.7,195H89V47h45.8c42.1,0,73.3,20.1,73.3,74   C208.1,172.8,170.6,195,132.7,195z"/>
-                </g>
-              </svg>
-            </a>
-            <a href="https://github.com/ricohasgithub/Covid-Classroom" target="_blank">
-              <i class="fa fa-github" style="font-size:32px"></i>
-            </a>
-          </p>      
-        </div>
-
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-top">
-        <img class="img-header" src="images/studying.jpg">
-      </div>
-      <div class="card-bottom">
-        <div class="top-section">
-          <h3 class="project-title">Integrity</h3>
-          <p class="project-description">Firebase, Javascript, Python</p>
-        </div>
-        <div class="links">
-          <p class="links-section">
-            <a href="https://github.com/ricohasgithub/Integrity" target="_blank">
-              <i class="fa fa-github" style="font-size:32px"></i>
-            </a>
-          </p>      
+        <div class="card-bottom">
+          <div class="title-section">
+            <h3 class="project-title">Sizzle</h3>
+            <p class="project-description">Android Studio, Google Cloud Platform, Java, Python</p>
+          </div>
+          <div class="links">
+            <p class="links-section">
+              <a href="https://devpost.com/software/yum-8gxtbc" target="_blank">
+                <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.3 242" enable-background="new 0 0 280.3 242" xml:space="preserve">
+                  <g id="XMLID_1_">
+                      <path id="XMLID_6_" d="M133.7,76H118v90h14.7c30.9,0,45.1-18.1,45.1-45C177.8,90.9,164.9,76,133.7,76z"/>
+                      <path id="XMLID_9_" d="M210.2,0H70.1L0,121l70.1,121h140.1l70.1-121L210.2,0z M132.7,195H89V47h45.8c42.1,0,73.3,20.1,73.3,74   C208.1,172.8,170.6,195,132.7,195z"/>
+                  </g>
+                </svg>
+              </a>
+              <a href="https://github.com/henrywangzh/RestaurantSignPennApps" target="_blank">
+                <i class="fa fa-github" style="font-size:32px"></i>
+              </a>
+            </p>   
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="projects-container2">
-    <div class="card">
-      <div class="card-top">
-        <img class="img-header" src="images/spotify.png">
-      </div>
-      <div class="card-bottom">
-        <div class="top-section">
-          <h3 class="project-title">Spotify Stats</h3>
-          <p class="project-description">MongoDB, Javascript, Python</p>
+      <div class="col-lg-4 col-md-6">
+        <div class="card-top">
+          <img class="img-header" src="images/covid.jpg">
         </div>
-        <div class="links">
-          <p class="links-section">
-            <a href="https://github.com/joeywangzr/spotifystats" target="_blank">
-              <i class="fa fa-github" style="font-size:32px"></i>
-            </a>
-          </p>      
+        <div class="card-bottom">
+          <div class="title-section">
+            <h3 class="project-title">Covid Classroom</h3>
+            <p class="project-description">Firebase, Javascript, Node.js</p>
+          </div>
+          <div class="links">
+            <p class="links-section">
+              <a href="https://devpost.com/software/covid-classroom" target="_blank">
+                <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280.3 242" enable-background="new 0 0 280.3 242" xml:space="preserve">
+                  <g id="XMLID_1_">
+                      <path id="XMLID_6_" d="M133.7,76H118v90h14.7c30.9,0,45.1-18.1,45.1-45C177.8,90.9,164.9,76,133.7,76z"/>
+                      <path id="XMLID_9_" d="M210.2,0H70.1L0,121l70.1,121h140.1l70.1-121L210.2,0z M132.7,195H89V47h45.8c42.1,0,73.3,20.1,73.3,74   C208.1,172.8,170.6,195,132.7,195z"/>
+                  </g>
+                </svg>
+              </a>
+              <a href="https://github.com/ricohasgithub/Covid-Classroom" target="_blank">
+                <i class="fa fa-github" style="font-size:32px"></i>
+              </a>
+            </p>      
+          </div>
+  
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-top">
-        <img class="img-header" src="images/pfp.jpg">
-      </div>
-      <div class="card-bottom">
-        <div class="top-section">
-          <h3 class="project-title">Portfolio Website</h3>
-          <p class="project-description">Javascript, HTML, CSS</p>
+      <div class="col-lg-4 col-md-6">
+        <div class="card-wrap">
+          <div class="card-top">
+            <img class="img-header" src="images/studying.jpg">
+          </div>
+          <div class="card-bottom">
+            <div class="top-section">
+              <h3 class="project-title">Integrity</h3>
+              <p class="project-description">Firebase, Javascript, Python</p>
+            </div>
+            <div class="links">
+              <p class="links-section">
+                <a href="https://github.com/ricohasgithub/Integrity" target="_blank">
+                  <i class="fa fa-github" style="font-size:32px"></i>
+                </a>
+              </p>      
+            </div>
+          </div>
         </div>
-        <div class="links">
-          <p class="links-section">
-            <a href="https://github.com/joeywangzr/joeywangzr.github.io" target="_blank">
-              <i class="fa fa-github" style="font-size:32px"></i>
-            </a>
-          </p>      
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card-top">
+          <img class="img-header" src="images/spotify.png">
+        </div>
+        <div class="card-bottom">
+          <div class="top-section">
+            <h3 class="project-title">Spotify Stats</h3>
+            <p class="project-description">MongoDB, Javascript, Python</p>
+          </div>
+          <div class="links">
+            <p class="links-section">
+              <a href="https://github.com/joeywangzr/spotifystats" target="_blank">
+                <i class="fa fa-github" style="font-size:32px"></i>
+              </a>
+            </p>      
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card-top">
+          <img class="img-header" src="images/pfp.jpg">
+        </div>
+        <div class="card-bottom">
+          <div class="top-section">
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-description">Javascript, HTML, CSS</p>
+          </div>
+          <div class="links">
+            <p class="links-section">
+              <a href="https://github.com/joeywangzr/joeywangzr.github.io" target="_blank">
+                <i class="fa fa-github" style="font-size:32px"></i>
+              </a>
+            </p>      
+          </div>
         </div>
       </div>
     </div>
