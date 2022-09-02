@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './js/index.js',
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname + '/webpack'),
+    path: path.resolve(__dirname + '/javascript'),
     filename: 'main.js',
   },
   module: {
