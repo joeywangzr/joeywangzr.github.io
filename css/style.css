@@ -18,35 +18,35 @@ body {
 }
 
 .demo a:hover {
-    opacity: .5;
+    opacity: .5 !important;
 }
 
 #section01 a span {
-    margin-top: 88vh;
-    position: absolute;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    box-sizing: border-box;
+    margin-top: 88vh !important;
+    position: absolute !important;
+    left: 50% !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-left: -12px !important;
+    border-left: 1px solid #fff !important;
+    border-bottom: 1px solid #fff !important;
+    -webkit-transform: rotate(-45deg) !important;
+    transform: rotate(-45deg) !important;
+    box-sizing: border-box !important;
 }
 
 #section02 a span {
-    margin-top: 88vh;
-    position: absolute;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    box-sizing: border-box;
+    margin-top: 88vh !important;
+    position: absolute !important;
+    left: 50% !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-left: -12px !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+    -webkit-transform: rotate(-45deg) !important;
+    transform: rotate(-45deg) !important;
+    box-sizing: border-box !important;
 }
 
 #intro-page{
