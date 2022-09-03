@@ -160,8 +160,8 @@ body {
     margin:auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 70%;
-    gap: 4vw;
+    width: 75%;
+    gap: 3vw;
 }
 
 .column-centered {
@@ -277,3 +277,6 @@ canvas {
     text-align: center;
 }
 
+.footer {
+    font-family: 'Courier New';
+}
