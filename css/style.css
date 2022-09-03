@@ -50,9 +50,11 @@ body {
 }
 
 #intro-page{
-    background-color: #2c2c2c;
+    background-color: #0E2A47;
     background-image: url(../images/bkg1.svg);
     color: white;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 #welcome {
@@ -239,7 +241,11 @@ body {
 }
 
 #projects-page {
-    background-color: grey;
+    /* background-color: #3b3b3b; */
+    background-image: url(../images/Animated\ Shape.svg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    /* color: white; */
 }
 
 #projects {
