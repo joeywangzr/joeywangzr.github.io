@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="images/ayaya.jpg">
     <title>Joey Wang</title>
@@ -18,93 +17,160 @@
 
   <body>
     <canvas id ="bg"></canvas>
-    <div id="header">
-      <ul id="navbar">
-        <li class="header-name" id="name"><a href="https://joeywang.ca">Joey Wang</a></li></li>
-        <li class="navbar-item remove-mobile"><a href="https://joeywang.ca/projects">Projects</a></li>
-        <li class="navbar-item remove-mobile"><a href="https://www.joeywang.ca/resume.pdf" target="_blank">Resume</a></li>
-        <li class="navbar-item" id="mode">
-          <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-              <input id="toggle" class="toggle" type="checkbox">
-              <div class="slider round"></div>
-            </label>
-            <script>
-              const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-              const currentTheme = localStorage.getItem('theme');
-      
-              if (currentTheme) {
-                  document.documentElement.setAttribute('data-theme', currentTheme);
-                
-                  if (currentTheme === 'dark') {
-                      toggleSwitch.checked = true;
-                  }
-              }
-      
-              function switchTheme(e) {
-                  if (e.target.checked) {
-                      document.documentElement.setAttribute('data-theme', 'dark');
-                      localStorage.setItem('theme', 'dark');
-                  }
-                  else {        document.documentElement.setAttribute('data-theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                  }    
-              }
-      
-              toggleSwitch.addEventListener('change', switchTheme, false);
-            </script>
-          </div>
-        </li>
-      </ul>
+    <div class="page" id="intro-page">
+        <div id="welcome">
+            <div id="text"></div><div id="cursor"></div>
         
+            <h3 id="name"></h3>
+
+            <script>
+                var i = 0;
+                var txt = 'Hi, I\'m Joey Wang! ';
+                var speed = 50;
+
+                if (navigator.userAgent.match(/Mobile/)) {
+                    txt = 'I\'m Joey Wang! '
+                }
+
+                function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("name").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+                }
+
+                window.onload = function() {
+                typeWriter();
+                };
+            </script>
+
+        </div>
+
+        <div id="subtitle">
+            <h3 class="subtitle-background">I'm a Computer Engineering Student at the University of Waterloo.</h3>
+        </div>
+
+        <section id="arrow-formatting" class="arrow">
+            <a href="#section05"><span></span></a>
+        </section>
+        
+        <script type="module" src="javascript/main.js"></script>
+
     </div>
 
-    <div id="welcome">
-      <div id="container">
-        <div id="text"></div><div id="cursor"></div>
-      </div>
-      
-      <h3 id="sub"></h3>
+    <div class="page">
 
-      <script>
-        var i = 0;
-        var txt = 'Welcome to my portfolio site!';
-        var speed = 50;
+        <div id="about-me">
 
-        if (navigator.userAgent.match(/Mobile/)) {
-          txt = 'Welcome!'
-        }
+            <div id="bio">
 
+                <div class="about">
+                    About Me
+                </div>
 
-        function typeWriter() {
-          if (i < txt.length) {
-            document.getElementById("sub").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-          }
-        }
+                <br>Hi! I'm Joey Wang, a Computer Engineering Student at the <a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a>.
 
-        window.onload = function() {
-          typeWriter();
-        };
-      </script>
+                <br>I love working with software - particularly by creating any random ideas I have! 
+        
+                <br>I am currently working as a Software Developer intern for the <a href="https://www.ford.ca/" target="_blank">Ford Motor Company</a>.
 
+                <br>My interests include piano, badminton, digital art, and anime/manga. 
+
+                <br><div id="links"><a href="https://github.com/joeywangzr" target="_blank">Github</a> <a href="https://www.linkedin.com/in/joeywangzr/" target="_blank">Linkedin</a> <a href="https://devpost.com/joeywangzr" target="_blank">Devpost</a> <a href="https://www.joeywang.ca/resume.pdf" target="_blank">Resume</a></div>
+
+            </div>
+            
+            <div class="wrapper">
+
+                <div class="column-centered" >
+                    <div class="caption">
+                        Current favourite song: 
+                    </div>
+        
+                    <iframe class="spotify" style="border-radius:12px" src="https://open.spotify.com/embed/track/2gYj9lubBorOPIVWsTXugG?utm_source=generator" width="70%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+        
+                <div class="column-centered">
+                    <div class="caption">
+                        Currently reading: 
+                    </div>
+        
+                    <div class="media" id="manga-box">
+                        
+                        <a href="https://anilist.co/manga/100994/Hells-Paradise-Jigokuraku/" target="_blank" class="cover" id="manga-cover"></a>
+        
+                        <div class="info">
+                            <a href="https://anilist.co/manga/100994/Hells-Paradise-Jigokuraku/" target="_blank" class="title">
+                                Hell's Paradise: Jigokuraku
+                            </a>
+                            <a href="https://anilist.co/staff/119118/Yuuji-Kaku/" target="_blank" class="author">
+                                Yuuji Kaku
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="column-centered">
+                    <div class="caption">
+                        Currently watching: 
+                    </div>
+        
+                    <div class="media" id="anime-box">
+                        
+                        <a href="https://anilist.co/anime/143270/Lycoris-Recoil/" target="_blank" class="cover" id="anime-cover"></a>
+        
+                        <div class="info">
+                            <a href="https://anilist.co/anime/143270/Lycoris-Recoil/" target="_blank" class="title">
+                                Lycoris Recoil
+                            </a>
+                            <a href="https://anilist.co/studio/561/A1-Pictures" target="_blank" class="author">
+                                A-1 Pictures
+        
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>    
+        </div>
     </div>
 
-    <div id="subtitles">
-      <div id="subtitle1">
-        <h3 class="sub1">I'm a Computer Engineering Student at the University of Waterloo.</h3>
-      </div>
-      <div id="subtitle2">
-        <h3 class="sub2">I’m passionate about bringing awesome ideas to life through coding and my own imagination! Check out my <a class="taglinebutton" href="https://joeywang.ca/projects">projects</a> and <a class="taglinebutton" href="https://www.joeywang.ca/resume.pdf" target="_blank">resume</a>.</h3>  
-      </div>
-    </div>
+    <div class="page" id="projects-page">
 
-    <div class="secret">
-      <button id="easteregg" class="secretbutton"></button>
+        <div id="about-me">
+
+            <div id="bio">
+
+                <div class="about">
+                    Projects
+                </div>
+                
+                <p id="projects">
+                    <a href="https://github.com/joeywangzr/Spotify-Tracking" target="_blank">
+                        <img class="portfolio-pin" src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Spotify-Tracking">
+                    </a>
+                    <a href="https://github.com/joeywangzr/Integrity" target="_blank">
+                        <img class="portfolio-pin" src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Integrity">
+                    </a>
+                    <a href="https://github.com/joeywangzr/RestaurantSignPennApps" target="_blank">
+                        <img class="portfolio-pin" src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=RestaurantSignPennApps">
+                    </a>
+                    <a href="https://github.com/joeywangzr/Covid-Classroom" target="_blank">
+                        <img class="portfolio-pin" src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Covid-Classroom">
+                    </a>
+                    <a href="https://github.com/joeywangzr/Potato-Platformer" target="_blank">
+                        <img class="portfolio-pin" src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Potato-Platformer">
+                    </a>
+                    <a href="https://github.com/joeywangzr/Amonger" target="_blank">
+                        <img class="portfolio-pin" src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Amonger">
+                    </a>
+                </p>
+
+            </div>
+        
+        </div>
     </div>
-    
-    <script type="module" src="javascript/main.js"></script>
 
   </body>
 </html>
