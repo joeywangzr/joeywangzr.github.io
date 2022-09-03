@@ -50,7 +50,7 @@ body {
 }
 
 #intro-page{
-    background-color: #2C2C2C;
+    background-color: #383838;
     background-image: url(../images/bkg1.svg);
     color: white;
     /* background-repeat: no-repeat;
@@ -279,4 +279,5 @@ canvas {
 
 .footer {
     font-family: 'Courier New';
+    background-color: #2C2C2C;
 }
