@@ -50,7 +50,7 @@ body {
 }
 
 #intro-page{
-    background-color: #0E2A47;
+    background-color: #2C2C2C;
     background-image: url(../images/bkg1.svg);
     color: white;
     /* background-repeat: no-repeat;
@@ -77,19 +77,19 @@ body {
 
     width: auto;
 
-    transition: color 500ms;
+    /* transition: color 500ms;
     letter-spacing: 1px;
     border-right: .10em solid orange;
     
     animation: 
         typing 3.5s steps(30, end),
-        blink-caret 1s step-end infinite;
+        blink-caret 1s step-end infinite; */
 }
 
-@keyframes blink-caret {
+/* @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange }
-}
+} */
 
 #subtitle {
     position: absolute;
