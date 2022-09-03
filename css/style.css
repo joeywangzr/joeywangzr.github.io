@@ -5,6 +5,10 @@ npx webpack
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:40");
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 body {
     margin: 0px;
 }
@@ -143,11 +147,11 @@ body {
     }
 }  
 
-#about-me {
+#page-details {
     padding-top: 15vh;
 }
 
-#bio {
+#page-text {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
 
@@ -159,12 +163,12 @@ body {
     /* width: 45vw; */
 }
 
-#bio a {
+#page-text a {
     text-decoration: none;
     color: #0573E8;
 }
 
-#bio a:hover {
+#page-text a:hover {
     text-decoration: underline;
 }
 
@@ -181,8 +185,8 @@ body {
     margin:auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 80%;
-    gap: 5vw;
+    width: 70%;
+    gap: 4vw;
 }
 
 .column-centered {
