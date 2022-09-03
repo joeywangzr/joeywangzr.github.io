@@ -50,7 +50,7 @@ body {
 }
 
 #intro-page{
-    background-color: #383838;
+    background-color: #2C2C2C;
     background-image: url(../images/bkg1.svg);
     color: white;
     /* background-repeat: no-repeat;
@@ -246,6 +246,7 @@ body {
     background-repeat:no-repeat;
     background-size:cover;
     /* color: white; */
+    position: relative;
 }
 
 #projects {
@@ -277,7 +278,23 @@ canvas {
     text-align: center;
 }
 
+.extra-info {
+    display: none;
+}
+
+.footer:hover .extra-info {
+    display: inline-block;
+}
+
 .footer {
-    font-family: 'Courier New';
-    background-color: #2C2C2C;
+    color: white;
+    position: absolute;
+    bottom:20px;
+    left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #0573E8;
 }
