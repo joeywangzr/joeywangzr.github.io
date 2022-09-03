@@ -282,3 +282,14 @@ canvas {
     top: 0;
     right: 0px;
 }
+
+#social {
+    position: absolute;
+    font-family: 'Poppins';
+    font-size: 22px;
+    font-weight: 200;
+    color: white;
+    background: rgba(0, 0, 0, .5);
+    margin-left: 15px;
+    text-align: center;
+}
