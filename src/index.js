@@ -587,7 +587,7 @@ domEvents.addEventListener(cubeE, 'click', event => {
     window.open('https://www.joeywang.ca/resume.pdf');
 })
 domEvents.addEventListener(cubeF, 'click', event => {
-    window.open('#projects-page');
+    document.getElementById('projects-page').scrollIntoView();
 })
 
 // Text beside cursor
