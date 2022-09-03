@@ -274,8 +274,11 @@ canvas {
     font-weight: 200;
     color: white;
     background: rgba(0, 0, 0, .5);
-    margin-left: 15px;
+    margin-left: 18px;
     text-align: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px;
 }
 
 .extra-info {
