@@ -301,3 +301,10 @@ canvas {
     text-decoration: none;
     color: #0573E8;
 }
+
+#easteregg {
+    position: absolute;
+    bottom: 0;
+    height: 20px;
+    opacity: 0;
+}
