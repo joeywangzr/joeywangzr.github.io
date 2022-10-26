@@ -4,6 +4,8 @@ npx webpack
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:40");
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap');
 
 html {
     scroll-behavior: smooth !important;
@@ -123,8 +125,8 @@ body {
 }
 
 #page-text {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 25px;
 
     text-align: center;
 
@@ -144,7 +146,7 @@ body {
 }
 
 .about {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inconsolata', monospace;
     font-size: 45px;
 }
 
@@ -152,8 +154,35 @@ body {
     color: white;
 }
  
+.important {
+    font-weight: 600;
+}
+
+.content-link {
+    font-family: 'Inconsolata', monospace;
+    font-size: 35px;
+    color: #0573E8;
+    text-decoration: none;
+    font-weight: 600;
+    padding-left: 3px;
+}
+
+.content-link:hover {
+    text-decoration: underline;
+}
+
 #links {
-    margin-top: 5vh;
+    margin-top: 9vh !important; 
+    margin:auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 40%;
+    gap: 2vw;
+}
+
+.info-link {
+    display: inline-block;
+    text-align: center;
 }
 
 .wrapper {
@@ -169,7 +198,8 @@ body {
 }
 
 .caption {
-    font-family: Courier;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
 }
 
 .media {
@@ -193,7 +223,7 @@ body {
 }
 
 #anime-box {
-    background-color: #E03A37;
+    background-color: #3A5D8E;
 }
 
 #manga-cover {
@@ -204,7 +234,7 @@ body {
 }
 
 #anime-cover {
-    background-image: url("https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx143270-iZOJX2DMUFMC.jpg");
+    background-image: url("https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png");
     background-position:50%;
     background-repeat:no-repeat;
     background-size:cover;
