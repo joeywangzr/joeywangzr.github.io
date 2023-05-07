@@ -1,0 +1,79 @@
+html {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+    margin: 0;
+    display:none;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: #0573E8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 99vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.name {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.about {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.about p {
+    margin-bottom: 10px;
+}
+
+.about ul {
+    margin-top: 0px;
+}
+
+.links {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.links a {
+    margin-left: 20px;
+    margin-right: 20px;
+}

@@ -1,209 +1,127 @@
-<!-- fix social text and mobile formatting -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/ayaya.jpg">
-    <title>Joey Wang</title>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Rubik:wght@300;400&display=swap" rel="stylesheet">
-
-  </head>
-
-  <body>
-    <canvas id ="bg"></canvas>
-
-    <div class="page" id="intro-page">
-        <div id="welcome">
-            <!-- <div id="text"></div><div id="cursor"></div> -->
-        
-            <h3 id="name">Hi, I'm Joey Wang!</h3>
-
-            <!-- <script>
-                var i = 0;
-                var txt = 'Hi, I\'m Joey Wang! ';
-                var speed = 50;
-
-                if (navigator.userAgent.match(/Mobile/)) {
-                    txt = 'I\'m Joey Wang! '
-                }
-
-                function typeWriter() {
-                if (i < txt.length) {
-                    document.getElementById("name").innerHTML += txt.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                }
-                }
-
-                window.onload = function() {
-                typeWriter();
-                };
-            </script> -->
-
-        </div>
-
-        <div id="subtitle">
-            <h3 class="subtitle-background">I'm a Computer Engineering Student at the University of Waterloo.</h3>
-        </div>
-
-        <div class="secret">
-            <button id="easteregg" class="secretbutton"></button>
+    <div class="centered">
+        <div class="name">
+            <pre id="ascii0">      _  ____  ________     __ __          __     _   _  _____ </pre>
+            <pre id="ascii1">     | |/ __ \|  ____\ \   / / \ \        / /\   | \ | |/ ____|</pre>
+            <pre id="ascii2">     | | |  | | |__   \ \_/ /   \ \  /\  / /  \  |  \| | |  __ </pre>
+            <pre id="ascii3"> _   | | |  | |  __|   \   /     \ \/  \/ / /\ \ | . ` | | |_ |</pre>
+            <pre id="ascii4">| |__| | |__| | |____   | |       \  /\  / ____ \| |\  | |__| |</pre>
+            <pre id="ascii5"> \____/ \____/|______|  |_|        \/  \/_/    \_\_| \_|\_____|</pre>
+            <div id="messenger">&nbsp</div>
+            <div id="messegner1">&nbsp</div>
+            <div id="messegner2">&nbsp</div>
+            <div id="messegner3">&nbsp</div>
+            <div id="messegner4">&nbsp</div>
+            <div id="messegner5">&nbsp</div>
         </div>      
-
-        <section id="section01" class="demo">
-          <a href="#about-me"><span></span></a>
-        </section>
-        
-        <script type="module" src="javascript/main.js"></script>
-
-    </div>
-
-    <div class="page" id="about-me">
-
-      <section id="section02" class="demo">
-        <a href="#projects-page"><span></span></a>
-      </section>
- 
-        <div id="page-details">
-
-            <div id="page-text">
-
-                <div class="about">
-                    About Me
-                </div>
-
-                <br>Hi! I'm Joey Wang, a Computer Engineering Student at the <a class="important" href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a>.
-
-                <br>I love working with software - particularly by creating any random ideas I have! 
-        
-                <br>I am currently working as a Software Developer Intern for the <a class="important" href="https://www.ford.ca/" target="_blank">Ford Motor Company</a>.
-
-                <br>My interests include piano, badminton, digital art, video games, and anime/manga. 
-
-            </div>
-            
-            <div class="wrapper">
-
-                <div class="column-centered" >
-                    <div class="caption">
-                        Current favourite song: 
-                    </div>
-        
-                    <iframe class="spotify" style="border-radius:12px" src="https://open.spotify.com/embed/track/0Fa9qMXVeHIKFU5fm35fy9?utm_source=generator" width="70%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-        
-                <div class="column-centered">
-                    <div class="caption">
-                        Currently reading: 
-                    </div>
-        
-                    <div class="media" id="manga-box">
-                        
-                        <a href="https://anilist.co/manga/30013/One-Piece/" target="_blank" class="cover" id="manga-cover"></a>
-        
-                        <div class="info">
-                            <a href="https://anilist.co/manga/30013/One-Piece/" target="_blank" class="title">
-                                One Piece
-                            </a>
-                            <a href="https://anilist.co/manga/30013/One-Piece/" target="_blank" class="author">
-                                Eiichirou Oda
-                            </a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="column-centered">
-                    <div class="caption">
-                        Currently watching: 
-                    </div>
-        
-                    <div class="media" id="anime-box">
-                        
-                        <a href="https://anilist.co/anime/127230/Chainsaw-Man/" target="_blank" class="cover" id="anime-cover"></a>
-        
-                        <div class="info">
-                            <a href="https://anilist.co/anime/127230/Chainsaw-Man/" target="_blank" class="title">
-                                Chainsaw Man
-                            </a>
-                            <a href="https://anilist.co/studio/569/MAPPA" target="_blank" class="author">
-                                MAPPA
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>   
-  
-            <div id="links">
-                <div class="info-link">
-                    <object data="images/github.svg" height="26"></object>
-                    <a class="content-link" href="https://github.com/joeywangzr" target="_blank">Github</a> 
-                </div>
-                <div class="info-link">
-                    <object data="images/linkedin.svg" height="26"></object>
-                    <a class="content-link" href="https://www.linkedin.com/in/joeywangzr/" target="_blank">Linkedin</a> 
-                </div>
-                <div class="info-link">
-                    <object data="images/resume.svg" height="26"></object>
-                    <a class="content-link" href="https://www.joeywang.ca/resume.pdf" target="_blank">Resume</a>
-                </div>
-            </div>
-            
-        </div>
-      
-    </div>
-
-    <div class="page" id="projects-page">
-
-        <div id="page-details">
-
-            <div id="page-text">
-
-                <div class="about" id="projects-title">
-                    Projects
-                </div>
+    
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script>
+            var Messenger = function(el, index){
+                'use strict';
+                var m = this;
+    
+                m.init = function(){
+                m.codeletters = "&#*+%?£@§$";
+                m.current_length = 0;
+                m.fadeBuffer = false;
+                m.messages = []
+                for (var i = 0; i <= 5; i++) {
+                    m.messages.push(document.getElementById('ascii'+i).innerHTML);
+                }
                 
-                <p id="projects">
-                    <a class="project-info" href="https://github.com/joeywangzr/Spotify-Tracking" target="_blank">
-                        <img src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Spotify-Tracking" width="380vw">
-                    </a>
-                    <a class="project-info" href="https://github.com/joeywangzr/Integrity" target="_blank">
-                        <img src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Integrity" width="380vw">
-                    </a>
-                    <a class="project-info" href="https://github.com/joeywangzr/RestaurantSignPennApps" target="_blank">
-                        <img src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=RestaurantSignPennApps" width="380vw">
-                    </a>
-                    <a class="project-info" href="https://github.com/joeywangzr/Covid-Classroom" target="_blank">
-                        <img src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Covid-Classroom" width="380vw">
-                    </a>
-                    <a class="project-info" href="https://github.com/joeywangzr/Potato-Platformer" target="_blank">
-                        <img src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Potato-Platformer" width="380vw">
-                    </a>
-                    <a class="project-info" href="https://github.com/joeywangzr/Amonger" target="_blank">
-                        <img src="https://github-readme-stats.vercel.app/api/pin/?username=joeywangzr&repo=Amonger" width="380vw">
-                    </a>
-                </p>
-
-            </div>
-        
+                setTimeout(m.animateIn, 100);
+                };
+    
+                m.generateRandomString = function(length) {
+                    var random_text = '';
+                    while(random_text.length < length) {
+                        random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+                    }
+    
+                    return random_text;
+                };
+    
+                m.animateIn = function(){
+                    m.current_length = m.messages[index].length;
+                        
+                    var message = m.generateRandomString(m.current_length);
+                    $(el).html(message);
+                        
+                    setTimeout(m.animateFadeBuffer, 100);
+                };
+    
+                m.animateFadeBuffer = function(){
+                    if(m.fadeBuffer === false){
+                        m.fadeBuffer = [];
+                        for(var i = 0; i < m.messages[index].length; i++){
+                            m.fadeBuffer.push({c: (Math.floor(Math.random()*15))+1, l: m.messages[index].charAt(i)});
+                        }
+                    }
+    
+                    var do_cycles = false;
+                    var message = ''; 
+    
+                    for(var i = 0; i < m.fadeBuffer.length; i++){
+                        var fader = m.fadeBuffer[i];
+                        if(fader.c > 0){
+                            do_cycles = true;
+                            fader.c--;
+                            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+                        } 
+                        else {
+                            message += fader.l;
+                        }
+                    }
+    
+                    $(el).html(message);
+    
+                    if(do_cycles === true){
+                        setTimeout(m.animateFadeBuffer, 50);
+                    } 
+                };
+    
+                m.init();
+            }
+    
+            var messenger = new Messenger($('#messenger'),0);
+            var messenger2 = new Messenger($('#messegner1'),1);
+            var messenger2 = new Messenger($('#messegner2'),2);
+            var messenger2 = new Messenger($('#messegner3'),3);
+            var messenger2 = new Messenger($('#messegner4'),4);
+            var messenger2 = new Messenger($('#messegner5'),5);
+    
+        </script>
+    
+        <div class="about">
+            <p>Welcome to my site!</p>
+            <ul>
+                <li>I'm a Computer Engineering student at the <a href="https://uwaterloo.ca/" target="_blank">Waterloo</a></li>
+                <li>I'm a data engineering intern at <a href="https://www.theglobeandmail.com/" target="_blank">The Globe and Mail</a></li>
+                <li>I was formerly a Software Developer Intern at <a href="https://ford.com/" target="_blank">Ford</a></li>
+                <li>I read a lot of manga</li>
+                <li>I also listen to a lot of music</li>
+            </ul>
         </div>
-        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <div class="footer">
-          <i class="credits icon-info-sign"></i>
-          <span class="extra-info">
-            Anime/manga cover art from <a target="_blank" href="https://anilist.co/">Anilist</a> |
-            Free SVG Background by <a target="_blank" href="https://bgjar.com">BGJar</a> |
-            © 2022 Joey Wang 
-          </span>
-      
+    
+        <div class="links">
+            <a href="https://github.com/joeywangzr" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/joeywangzr" target="_blank">Linkedin</a>
+            <a>Resume</a>
+            <a>Projects</a>
+        </div>
+    
     </div>
-  </div>
-</body>
 
+</body>
 </html>
