@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="centered">
+        <div class="name">
+            <pre id="ascii0">      _  ____  ________     __ __          __     _   _  _____ </pre>
+            <pre id="ascii1">     | |/ __ \|  ____\ \   / / \ \        / /\   | \ | |/ ____|</pre>
+            <pre id="ascii2">     | | |  | | |__   \ \_/ /   \ \  /\  / /  \  |  \| | |  __ </pre>
+            <pre id="ascii3"> _   | | |  | |  __|   \   /     \ \/  \/ / /\ \ | . ` | | |_ |</pre>
+            <pre id="ascii4">| |__| | |__| | |____   | |       \  /\  / ____ \| |\  | |__| |</pre>
+            <pre id="ascii5"> \____/ \____/|______|  |_|        \/  \/_/    \_\_| \_|\_____|</pre>
+            <div id="messenger">&nbsp</div>
+            <div id="messegner1">&nbsp</div>
+            <div id="messegner2">&nbsp</div>
+            <div id="messegner3">&nbsp</div>
+            <div id="messegner4">&nbsp</div>
+            <div id="messegner5">&nbsp</div>
+        </div>      
+    
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script>
+            var Messenger = function(el, index){
+                'use strict';
+                var m = this;
+    
+                m.init = function(){
+                m.codeletters = "&#*+%?£@§$";
+                m.current_length = 0;
+                m.fadeBuffer = false;
+                m.messages = []
+                for (var i = 0; i <= 5; i++) {
+                    m.messages.push(document.getElementById('ascii'+i).innerHTML);
+                }
+                
+                setTimeout(m.animateIn, 100);
+                };
+    
+                m.generateRandomString = function(length) {
+                    var random_text = '';
+                    while(random_text.length < length) {
+                        random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+                    }
+    
+                    return random_text;
+                };
+    
+                m.animateIn = function(){
+                    m.current_length = m.messages[index].length;
+                        
+                    var message = m.generateRandomString(m.current_length);
+                    $(el).html(message);
+                        
+                    setTimeout(m.animateFadeBuffer, 100);
+                };
+    
+                m.animateFadeBuffer = function(){
+                    if(m.fadeBuffer === false){
+                        m.fadeBuffer = [];
+                        for(var i = 0; i < m.messages[index].length; i++){
+                            m.fadeBuffer.push({c: (Math.floor(Math.random()*15))+1, l: m.messages[index].charAt(i)});
+                        }
+                    }
+    
+                    var do_cycles = false;
+                    var message = ''; 
+    
+                    for(var i = 0; i < m.fadeBuffer.length; i++){
+                        var fader = m.fadeBuffer[i];
+                        if(fader.c > 0){
+                            do_cycles = true;
+                            fader.c--;
+                            message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+                        } 
+                        else {
+                            message += fader.l;
+                        }
+                    }
+    
+                    $(el).html(message);
+    
+                    if(do_cycles === true){
+                        setTimeout(m.animateFadeBuffer, 50);
+                    } 
+                };
+    
+                m.init();
+            }
+    
+            var messenger = new Messenger($('#messenger'),0);
+            var messenger2 = new Messenger($('#messegner1'),1);
+            var messenger2 = new Messenger($('#messegner2'),2);
+            var messenger2 = new Messenger($('#messegner3'),3);
+            var messenger2 = new Messenger($('#messegner4'),4);
+            var messenger2 = new Messenger($('#messegner5'),5);
+    
+        </script>
+    
+        <div class="about">
+            <p>Welcome to my site!</p>
+            <ul>
+                <li>I'm a Computer Engineering student at the <a href="https://uwaterloo.ca/" target="_blank">Waterloo</a></li>
+                <li>I'm a data engineering intern at <a href="https://www.theglobeandmail.com/" target="_blank">The Globe and Mail</a></li>
+                <li>I was formerly a Software Developer Intern at <a href="https://ford.com/" target="_blank">Ford</a></li>
+                <li>I read a lot of manga</li>
+                <li>I also listen to a lot of music</li>
+            </ul>
+        </div>
+    
+        <div class="links">
+            <a href="https://github.com/joeywangzr" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/joeywangzr" target="_blank">Linkedin</a>
+            <a>Resume</a>
+            <a>Projects</a>
+        </div>
+    
+    </div>
+
+</body>
+</html>
