@@ -47,18 +47,21 @@ a:hover {
     width: fit-content;
     text-align: center;
     font-weight: bold;
-    animation: fadeInAnimation ease 2s;
+    animation: fadeInAnimation ease 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
  
 @keyframes fadeInAnimation {
     0% {
-        opacity: 0;
+        color: white;
+    }
+    50% {
+        color: grey;
     }
     100% {
-        opacity: 1;
-     }
+        color: black;
+    }
 }
 
 .about {
@@ -82,5 +85,5 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 10px;
+    gap: 100px;
 }
