@@ -10,9 +10,8 @@
     <link rel="icon" type="image/x-icon" href="images/ayaya.jpg">
 </head>
 <body>
-
     <div class="centered">
-        <div class="name">
+        <div class="name" id="name">
             <pre id="ascii0">      _  ____  ________     __ __          __     _   _  _____ </pre>
             <pre id="ascii1">     | |/ __ \|  ____\ \   / / \ \        / /\   | \ | |/ ____|</pre>
             <pre id="ascii2">     | | |  | | |__   \ \_/ /   \ \  /\  / /  \  |  \| | |  __ </pre>
@@ -105,7 +104,7 @@
     
         </script>
     
-        <div class="about">
+        <div class="about" id="about">
             <p>Welcome to my site!</p>
             <ul>
                 <li>I'm a Computer Engineering student at <a rel="noreferrer" href="https://uwaterloo.ca/" target="_blank">Waterloo</a></li>
@@ -116,13 +115,39 @@
             </ul>
         </div>
     
-        <div class="links">
+        <div class="links" id="links">
             <a rel="noreferrer" href="https://github.com/joeywangzr" target="_blank">Github</a>
             <a rel="noreferrer" href="https://www.linkedin.com/in/joeywangzr" target="_blank">Linkedin</a>
             <a rel="noreferrer" href="https://drive.google.com/file/d/1AlifhlxYFAmaIdp0KnnwAlUyhTB-07Z6/view?usp=sharing" target="_blank">Resume</a>
             <a>Projects</a>
         </div>
     
+        <div class="credentials" id="credentials">
+            © 2021 Joey Wang
+        </div>
+        <button class="mode" id="mode" onclick="switchMode()">
+            ☀ LIGHT MODE
+            <!-- ☾ DARK MODE -->
+        </button>
+
+        <script>
+            function switchMode() {
+                mode = document.getElementById('mode').innerText;
+                if (mode == "☀ LIGHT MODE") {
+                    document.getElementById('mode').innerText = "☾ DARK MODE";
+                }
+                else {
+                    document.getElementById('mode').innerText = "☀ LIGHT MODE";
+                }
+                document.body.classList.toggle('light');
+                document.getElementById("links").classList.toggle('light-mode');
+                document.getElementById("about").classList.toggle('light-mode');
+                document.getElementById("name").classList.toggle('light-mode');
+                document.getElementById("credentials").classList.toggle('light-mode');
+                document.getElementById("mode").classList.toggle('light-mode');
+            }
+        </script>
+
     </div>
 
 </body>
