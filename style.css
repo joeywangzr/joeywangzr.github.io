@@ -2,16 +2,6 @@ html {
     font-family: 'Courier New', Courier, monospace;
 }
 
-@media only screen and (max-width: 610px) {
-    html {
-        font-size: 2vw;
-    }
-    .links a {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-}  
-
 pre {
     margin: 0;
     display: none;
@@ -87,3 +77,12 @@ a:hover {
     flex-direction: row;
     gap: 100px;
 }
+
+@media only screen and (max-width: 610px) {
+    html {
+        font-size: 2.5vw;
+    }
+    .links {
+        gap: 10vw;
+    }
+}  
