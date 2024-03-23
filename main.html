@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <style>
+        body {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 97.7vh;
+        }
+        #github {
+            position: fixed;
+            cursor: pointer;
+            left: 33.5%;
+            bottom: 9.4%;
+            width: 6.5%;
+            height: 6%;
+        }
+        #linkedin {
+            position: fixed;
+            cursor: pointer;
+            left: 42.3%;
+            bottom: 9.4%;
+            width: 6.9%;
+            height: 6%;
+        }
+        #resume {
+            position: fixed;
+            cursor: pointer;
+            left: 51%;
+            bottom: 7.8%;
+            width: 5.7%;
+            height: 6%;
+        }
+        #projects {
+            position: fixed;
+            cursor: pointer;
+            left: 58.3%;
+            bottom: 7.8%;
+            width: 7.5%;
+            height: 8%;
+        }
+        .animation-container {
+            position: absolute;
+            left: 21%;
+        }
+        .frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 98vh;
+            opacity: 0;
+            transition: opacity 0;
+        }
+    </style>
+</head>
+<body background="./website.jpg">
+    <div class="animation-container">
+        <img src="animation/transition 1.png" class="frame" id="frame1">
+        <img src="animation/transition 2.png" class="frame" id="frame2">
+        <img src="animation/transition 3.png" class="frame" id="frame3">
+        <img src="animation/transition 4.png" class="frame" id="frame4">
+        <img src="animation/transition 5.png" class="frame" id="frame5">
+        <img src="animation/transition 6.png" class="frame" id="frame6">
+        <img src="animation/transition 7.png" class="frame" id="frame7">
+        <img src="animation/transition 8.png" class="frame" id="frame8">
+        <img src="animation/transition 9.png" class="frame" id="frame9">
+        <img src="animation/transition 10.png" class="frame" id="frame10">
+    </div>
+
+    <a id="github" rel="noreferrer" href="https://github.com/joeywangzr" target="_blank"></a>
+    <a id="linkedin" rel="noreferrer" href="https://www.linkedin.com/in/joeywangzr" target="_blank"></a>
+    <a id="resume" rel="noreferrer" href="https://drive.google.com/file/d/14mO4eh4JHHMu7VAMGpTdQSfXSDbPWuoH/view?usp=sharing" target="_blank"></a>
+    <a id="projects"></a>
+
+    <script>
+        document.getElementById("projects").addEventListener("click", function() {
+            var frames = document.querySelectorAll(".frame");
+            frames.forEach(function(frame, index) {
+                setTimeout(function() {
+                    frame.style.opacity = 1;
+                    if (index === frames.length - 1) {
+                        setTimeout(function() {
+                        window.location.href = "projects.html";
+                        }, 90);
+                    }
+                }, index * 90);
+            });
+        });
+    </script>
+</body>
+</html>
