@@ -55,39 +55,200 @@
             opacity: 0;
             transition: opacity 0;
         }
+        .projects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 98vh;
+            opacity: 0;
+        }
+        /* .project-button {
+            display: none;
+            background-color: aqua;
+            opacity: 50%;
+        }
+        .social-button {
+            background-color: orange;
+        } */
+        #lodestone {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 11%;
+            width: 33%;
+            height: 12%;
+        }
+        #recipe {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 24%;
+            width: 33%;
+            height: 11%;
+        }
+        #travelens {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 36%;
+            width: 33%;
+            height: 11%;
+        }
+        #covid {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 49%;
+            width: 33%;
+            height: 11%;
+        }
+        #sizzle {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 61%;
+            width: 33%;
+            height: 10%;
+        }
+        #integrity {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 72%;
+            width: 33%;
+            height: 12%;
+        }
+        #discord {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 84%;
+            width: 33%;
+            height: 7%;
+        }
+        #games {
+            position: fixed;
+            cursor: pointer;
+            left: 21%;
+            top: 91%;
+            width: 33%;
+            height: 8%;
+        }
+        #youtube {
+            position: fixed;
+            cursor: pointer;
+            right: 22%;
+            top: 19%;
+            width: 20%;
+            height: 8%;
+        }
+        #back {
+            position: fixed;
+            cursor: pointer;
+            right: 22%;
+            top: 85%;
+            width: 12%;
+            height: 13%;
+        }
     </style>
 </head>
 <body background="./website.jpg">
     <div class="animation-container">
-        <img src="animation/transition 1.png" class="frame" id="frame1">
-        <img src="animation/transition 2.png" class="frame" id="frame2">
-        <img src="animation/transition 3.png" class="frame" id="frame3">
-        <img src="animation/transition 4.png" class="frame" id="frame4">
-        <img src="animation/transition 5.png" class="frame" id="frame5">
-        <img src="animation/transition 6.png" class="frame" id="frame6">
-        <img src="animation/transition 7.png" class="frame" id="frame7">
-        <img src="animation/transition 8.png" class="frame" id="frame8">
-        <img src="animation/transition 9.png" class="frame" id="frame9">
-        <img src="animation/transition 10.png" class="frame" id="frame10">
+        <img src="animation/transition1.png" class="frame" id="frame1">
+        <img src="animation/transition2.png" class="frame" id="frame2">
+        <img src="animation/transition3.png" class="frame" id="frame3">
+        <img src="animation/transition4.png" class="frame" id="frame4">
+        <img src="animation/transition5.png" class="frame" id="frame5">
+        <img src="animation/transition6.png" class="frame" id="frame6">
+        <img src="animation/transition7.png" class="frame" id="frame7">
+        <img src="animation/transition8.png" class="frame" id="frame8">
+        <img src="animation/transition9.png" class="frame" id="frame9">
+        <img src="animation/transition10.png" class="frame" id="frame10">
     </div>
+    <img class="projects" src="projects.png">
 
-    <a id="github" rel="noreferrer" href="https://github.com/joeywangzr" target="_blank"></a>
-    <a id="linkedin" rel="noreferrer" href="https://www.linkedin.com/in/joeywangzr" target="_blank"></a>
-    <a id="resume" rel="noreferrer" href="https://drive.google.com/file/d/14mO4eh4JHHMu7VAMGpTdQSfXSDbPWuoH/view?usp=sharing" target="_blank"></a>
-    <a id="projects"></a>
+    <a class="social-button" id="github" rel="noreferrer" href="https://github.com/joeywangzr" target="_blank"></a>
+    <a class="social-button" id="linkedin" rel="noreferrer" href="https://www.linkedin.com/in/joeywangzr" target="_blank"></a>
+    <a class="social-button" id="resume" rel="noreferrer" href="https://drive.google.com/file/d/14mO4eh4JHHMu7VAMGpTdQSfXSDbPWuoH/view?usp=sharing" target="_blank"></a>
+    <a class="social-button" id="projects"></a>
+
+    <a class="project-button" id="lodestone" rel="noreferrer" href="https://github.com/Lodestone-Team/lodestone" target="_blank"></a>
+    <a class="project-button" id="recipe" rel="noreferrer" href="https://github.com/recipede/recipe-detect" target="_blank"></a>
+    <a class="project-button" id="travelens" rel="noreferrer" href="https://github.com/k429wang/TravelLens" target="_blank"></a>
+    <a class="project-button" id="covid" rel="noreferrer" href="https://github.com/ricohasgithub/Covid-Classroom" target="_blank"></a>
+    <a class="project-button" id="sizzle" rel="noreferrer" href="https://github.com/henrywangzh/RestaurantSignPennApps" target="_blank"></a>
+    <a class="project-button" id="integrity" rel="noreferrer" href="https://github.com/ricohasgithub/Integrity" target="_blank"></a>
+    <a class="project-button" id="discord" rel="noreferrer" href="https://github.com/joeywangzr/Discord-Bots" target="_blank"></a>
+    <a class="project-button" id="games" rel="noreferrer" href="https://github.com/C0W0/Project-Don-t-Procrastinate" target="_blank"></a>
+    <a class="project-button" id="youtube" rel="noreferrer" href="https://www.youtube.com/@joeywangzr" target="_blank"></a>
+    <a class="project-button" id="back"></a>
 
     <script>
         document.getElementById("projects").addEventListener("click", function() {
             var frames = document.querySelectorAll(".frame");
+            var body = document.getElementsByTagName('body')[0];
+            
+            var socialButtons = document.querySelectorAll('.social-button');
+            socialButtons.forEach(function(button) {
+                button.style.display = 'none';
+            });
+
             frames.forEach(function(frame, index) {
                 setTimeout(function() {
-                    frame.style.opacity = 1;
+                    body.style.background = `url('animation/transition${index + 1}.png')`;
+                    body.style.backgroundSize = "contain";
+                    body.style.backgroundRepeat = "no-repeat";
+                    body.style.backgroundPosition = "center center";
+                    body.style.backgroundAttachment = "fixed";
                     if (index === frames.length - 1) {
                         setTimeout(function() {
-                        window.location.href = "projects.html";
-                        }, 90);
+                            body.style.background = `url('projects.png')`;
+                            body.style.backgroundSize = "contain";
+                            body.style.backgroundRepeat = "no-repeat";
+                            body.style.backgroundPosition = "center center";
+                            body.style.backgroundAttachment = "fixed";
+                            
+                            var projectButtons = document.querySelectorAll('.project-button');
+                            projectButtons.forEach(function(button) {
+                                button.style.display = 'block';
+                            });
+                        }, 70);
                     }
-                }, index * 90);
+                }, index * 70);
+            });
+        });
+
+        document.getElementById("back").addEventListener("click", function() {
+            var frames = document.querySelectorAll(".frame");
+            var body = document.getElementsByTagName('body')[0];
+            
+            var projectButtons = document.querySelectorAll('.project-button');
+            projectButtons.forEach(function(button) {
+                button.style.display = 'none';
+            });
+
+            frames.forEach(function(frame, index) {
+                setTimeout(function() {
+                    body.style.background = `url('animation/transition${10 - index}.png')`;
+                    body.style.backgroundSize = "contain";
+                    body.style.backgroundRepeat = "no-repeat";
+                    body.style.backgroundPosition = "center center";
+                    body.style.backgroundAttachment = "fixed";
+                    if (index === frames.length - 1) {
+                        setTimeout(function() {
+                            body.style.background = `url('website.jpg')`;
+                            body.style.backgroundSize = "contain";
+                            body.style.backgroundRepeat = "no-repeat";
+                            body.style.backgroundPosition = "center center";
+                            body.style.backgroundAttachment = "fixed";
+                            
+                            var socialButtons = document.querySelectorAll('.social-button');
+                            socialButtons.forEach(function(button) {
+                                button.style.display = 'block';
+                            });
+                        }, 70);
+                    }
+                }, index * 70);
             });
         });
     </script>
